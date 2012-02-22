@@ -1,0 +1,13 @@
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\Bin\Debug\ApplicationIcon.png
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\Bin\Debug\Background.png
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\Bin\Debug\SilverLightHelloPhone.dll
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\Bin\Debug\SilverLightHelloPhone.pdb
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\Bin\Debug\AppManifest.xaml
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\Bin\Debug\SilverLightHelloPhone.xap
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\obj\Debug\App.g.i.cs
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\obj\Debug\MainPage.g.i.cs
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\obj\Debug\SilverLightHelloPhone.g.resources
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\obj\Debug\SilverLightHelloPhone.dll
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\obj\Debug\SilverLightHelloPhone.pdb
+C:\Users\Tejas\Documents\Projects\WindowsPhoneProject\tejassharma_wpr\SilverLightHelloPhone\SilverLightHelloPhone\obj\Debug\XapCacheFile.xml
