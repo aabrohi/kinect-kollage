@@ -1,0 +1,13 @@
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\Bin\Debug\ApplicationIcon.png
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\Bin\Debug\Background.png
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\Bin\Debug\UDPSocketUI.dll
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\Bin\Debug\UDPSocketUI.pdb
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\Bin\Debug\AppManifest.xaml
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\Bin\Debug\UDPSocketUI.xap
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\obj\Debug\ResolveAssemblyReference.cache
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\obj\Debug\App.g.i.cs
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\obj\Debug\MainPage.g.i.cs
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\obj\Debug\UDPSocketUI.g.resources
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\obj\Debug\UDPSocketUI.dll
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\obj\Debug\UDPSocketUI.pdb
+c:\users\newtype\documents\visual studio 2010\Projects\UDPSocketUI\UDPSocketUI\obj\Debug\XapCacheFile.xml
