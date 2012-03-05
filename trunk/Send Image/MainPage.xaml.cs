@@ -62,11 +62,21 @@ namespace Send_Image
             // Make sure we can perform this action with valid data
             if (ValidateRemoteHost())
             {
+                // Convert image to WriteableBitmap
+                WriteableBitmap bmp = new WriteableBitmap(image1, null);
+                // Convert to byte array
+                int[] p = bmp.Pixels;
+                int len = p.Length * 4;
+                byte[] imageByteArray = new byte[len]; //ARGB array
+                Buffer.BlockCopy(p, 0, imageByteArray, 0, len);
+
+                string chosenPhoto = Convert.ToBase64String(imageByteArray);
+
                 // Instantiate the UDPSocket
                 UDPSocket client = new UDPSocket();
 
                 // Attempt to send our message to the server
-                string result = client.Send(txtRemoteHost.Text, IMAGE_PORT, e.ChosenPhoto); //need to fix this...
+                string result = client.Send(txtRemoteHost.Text, IMAGE_PORT, chosenPhoto); //need to fix this...
 
                 // Receive a response from the server
                 result = client.Receive(IMAGE_PORT);
