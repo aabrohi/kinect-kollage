@@ -64,13 +64,14 @@ namespace Send_Image
             {
                 // Convert image to WriteableBitmap
                 WriteableBitmap bmp = new WriteableBitmap(image1, null);
-                // Convert to byte array
-                int[] p = bmp.Pixels;
-                int len = p.Length * 4;
-                byte[] imageByteArray = new byte[len]; //ARGB array
-                Buffer.BlockCopy(p, 0, imageByteArray, 0, len);
-
-                string chosenPhoto = Convert.ToBase64String(imageByteArray);
+                string chosenPhoto = bmp.ToString();
+               
+                //// Convert to byte array
+                //int[] p = bmp.Pixels;
+                //int len = p.Length * 4;
+                //byte[] imageByteArray = new byte[len]; //ARGB array
+                //Buffer.BlockCopy(p, 0, imageByteArray, 0, len);
+                //string chosenPhoto = Convert.ToBase64String(imageByteArray);
 
                 // Instantiate the UDPSocket
                 UDPSocket client = new UDPSocket();
