@@ -21,7 +21,7 @@ namespace Send_Image
     {
         // Cached Socket object that will be used by each call for the lifetime of this class
         Socket _socket = null;
-        
+       
         // Signaling object used to notify when an asynchronous operation is completed
         static ManualResetEvent _clientDone = new ManualResetEvent(false);
 
