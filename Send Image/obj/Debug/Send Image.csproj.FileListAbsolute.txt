@@ -13,3 +13,11 @@ C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\App.g.i.cs
 C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\MainPage.g.i.cs
 C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\Send Image.g.resources
 C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\Send Image.dll
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\Bin\Debug\ApplicationIcon.png
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\Bin\Debug\Background.png
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\Bin\Debug\Send Image.dll
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\Bin\Debug\Send Image.pdb
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\Bin\Debug\AppManifest.xaml
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\Bin\Debug\Send_Image.xap
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\Send Image.pdb
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\XapCacheFile.xml
