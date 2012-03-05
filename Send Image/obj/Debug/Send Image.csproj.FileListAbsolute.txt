@@ -8,3 +8,8 @@
 \\filer\ddsniper\ms_windows\cpsc_redirected\My Documents\Visual Studio 2010\Projects\Send Image\Send Image\obj\Debug\Send Image.dll
 \\filer\ddsniper\ms_windows\cpsc_redirected\My Documents\Visual Studio 2010\Projects\Send Image\Send Image\obj\Debug\Send Image.pdb
 \\filer\ddsniper\ms_windows\cpsc_redirected\My Documents\Visual Studio 2010\Projects\Send Image\Send Image\Bin\Debug\Send Image.dll
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\App.g.i.cs
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\MainPage.g.i.cs
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\Send Image.g.resources
+C:\Users\Tejas\Documents\Spring12\CapstoneCode\Send Image\obj\Debug\Send Image.dll
