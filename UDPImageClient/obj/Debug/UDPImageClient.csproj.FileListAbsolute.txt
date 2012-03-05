@@ -1,0 +1,13 @@
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\Bin\Debug\ApplicationIcon.png
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\Bin\Debug\Background.png
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\Bin\Debug\UDPImageClient.dll
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\Bin\Debug\UDPImageClient.pdb
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\Bin\Debug\AppManifest.xaml
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\Bin\Debug\UDPImageClient.xap
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\obj\Debug\ResolveAssemblyReference.cache
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\obj\Debug\App.g.i.cs
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\obj\Debug\MainPage.g.i.cs
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\obj\Debug\UDPImageClient.g.resources
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\obj\Debug\UDPImageClient.dll
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\obj\Debug\UDPImageClient.pdb
+c:\users\ddsniper\documents\visual studio 2010\Projects\UDPImageClient\UDPImageClient\obj\Debug\XapCacheFile.xml

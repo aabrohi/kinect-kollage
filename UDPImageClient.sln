@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010 Express for Windows Phone
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPImageClient", "UDPImageClient\UDPImageClient.csproj", "{125DDF6C-9A27-4CD9-9538-F28F906364F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{125DDF6C-9A27-4CD9-9538-F28F906364F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125DDF6C-9A27-4CD9-9538-F28F906364F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125DDF6C-9A27-4CD9-9538-F28F906364F9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{125DDF6C-9A27-4CD9-9538-F28F906364F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125DDF6C-9A27-4CD9-9538-F28F906364F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{125DDF6C-9A27-4CD9-9538-F28F906364F9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
