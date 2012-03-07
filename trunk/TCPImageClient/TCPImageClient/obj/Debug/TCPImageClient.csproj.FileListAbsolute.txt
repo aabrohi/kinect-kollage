@@ -1,0 +1,13 @@
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\Bin\Debug\ApplicationIcon.png
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\Bin\Debug\Background.png
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\Bin\Debug\TCPImageClient.dll
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\Bin\Debug\TCPImageClient.pdb
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\Bin\Debug\AppManifest.xaml
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\Bin\Debug\TCPImageClient.xap
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\obj\Debug\App.g.i.cs
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\obj\Debug\MainPage.g.i.cs
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\obj\Debug\TCPImageClient.g.resources
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\obj\Debug\TCPImageClient.dll
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\obj\Debug\TCPImageClient.pdb
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPImageClient\TCPImageClient\obj\Debug\XapCacheFile.xml
