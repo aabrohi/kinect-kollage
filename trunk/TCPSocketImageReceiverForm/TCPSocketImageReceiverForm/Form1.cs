@@ -14,7 +14,9 @@ using System.Diagnostics; // for diagnosing, HOUSE MD style :P
 using System.Windows;
 using System.Threading;
 
-
+using System.Web;
+using TwiPLi;
+using System.Xml.Linq;
 
 namespace TCPSocketImageReceiverForm
 {
@@ -29,6 +31,8 @@ namespace TCPSocketImageReceiverForm
         public byte[] buffer = new byte[BufferSize];
         // Received data string.
         public StringBuilder sb = new StringBuilder();
+
+        public int picCounter = 0;
     }
 
     public partial class Form1 : Form
@@ -39,6 +43,7 @@ namespace TCPSocketImageReceiverForm
         //Socket s;
         //EndPoint Remote;
         //IPEndPoint ipep;
+        
 
         public static ManualResetEvent allDone = new ManualResetEvent(false);
 
@@ -110,7 +115,7 @@ namespace TCPSocketImageReceiverForm
 
 
 
-            Debug.WriteLine("First part of the buffer: " + state.buffer[0]);
+          //  Debug.WriteLine("First part of the buffer: " + state.buffer[0]);
         }
 
         public static void ReadCallback(IAsyncResult ar)
@@ -121,6 +126,7 @@ namespace TCPSocketImageReceiverForm
             // from the asynchronous state object.
             StateObject state = (StateObject)ar.AsyncState;
             Socket handler = state.workSocket;
+            Random random = new Random();
 
             // Read data from the client socket. 
             int bytesRead = handler.EndReceive(ar);
@@ -160,11 +166,125 @@ namespace TCPSocketImageReceiverForm
 
             byte[] imageBytes = Convert.FromBase64String(content);
 
-            FileStream fs = File.Create(@"C:\Users\ddsniper\Downloads\1.jpg");
+            int number = random.Next(0, 100);
+            string thefilename = "C:\\Users\\ddsniper\\Downloads\\CCT.NUI (12689)\\Images\\" + "picture_" + number + ".jpg";
+            Debug.WriteLine("Writing the picture to " + thefilename);
+            FileStream fs = File.Create(@thefilename);
             fs.Write(imageBytes, 0, imageBytes.Length);
+
+            TwitPic tw = new TwitPic();
+            Debug.WriteLine("image/png " + "image_ " + number + " " + thefilename + " " + "f1df26cd49afe58d92fff17cdd1c94bf " + "494611009-ybbVnZ9ThmVUhN65QvH0x2l48BcXUtF0pNG8AUq4 " + "YZ2eGUbGnYz1ratWweQD1fpK1JuxAUtJ4nIZBA1Y " + "cflG9inzlNltp2Znw5zEWA " + "CDS4bQi9NRdRRBGR4Am1skJNRonHbGrsBFwUmpk ");
+            string upload_script = tw.UploadPhoto(imageBytes, "image/png", "image_" + number, thefilename, "f1df26cd49afe58d92fff17cdd1c94bf", "494611009-ybbVnZ9ThmVUhN65QvH0x2l48BcXUtF0pNG8AUq4", "YZ2eGUbGnYz1ratWweQD1fpK1JuxAUtJ4nIZBA1Y", "cflG9inzlNltp2Znw5zEWA", "CDS4bQi9NRdRRBGR4Am1skJNRonHbGrsBFwUmpk").ToString();
+            Debug.WriteLine("Result of upload_script =" + upload_script);
             fs.Close();
         }
+        public class TwitPic
+        {
+            private const string TWITPIC_UPLADO_API_URL = "http://api.twitpic.com/2/upload";
+            private const string TWITPIC_UPLOAD_AND_POST_API_URL = "http://api.twitpic.com/1/uploadAndPost.xml";
+            /// 
+            /// Uploads the photo and sends a new Tweet
+            /// 
+            /// <param name="binaryImageData">The binary image data.
+            /// <param name="tweetMessage">The tweet message.
+            /// <param name="filename">The filename.
+            /// Return true, if the operation was succeded.
+            public string UploadPhoto(byte[] binaryImageData, string ContentType, string tweetMessage, string filename, string tpkey, string usrtoken, string usrsecret, string contoken, string consecret)
+            {
+                string boundary = Guid.NewGuid().ToString();
+                string requestUrl = String.IsNullOrEmpty(tweetMessage) ? TWITPIC_UPLADO_API_URL : TWITPIC_UPLOAD_AND_POST_API_URL;
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestUrl);
+                string encoding = "iso-8859-1";
 
+                request.PreAuthenticate = true;
+                request.AllowWriteStreamBuffering = true;
+                request.ContentType = string.Format("multipart/form-data; boundary={0}", boundary);
+                request.Method = "POST";
+
+                string header = string.Format("--{0}", boundary);
+                string footer = string.Format("--{0}--", boundary);
+
+                StringBuilder contents = new StringBuilder();
+                contents.AppendLine(header);
+
+                string fileContentType = ContentType;
+                string fileHeader = String.Format("Content-Disposition: file; name=\"{0}\"; filename=\"{1}\"", "media", filename);
+                string fileData = Encoding.GetEncoding(encoding).GetString(binaryImageData);
+
+                contents.AppendLine(fileHeader);
+                contents.AppendLine(String.Format("Content-Type: {0}", fileContentType));
+                contents.AppendLine();
+                contents.AppendLine(fileData);
+
+                contents.AppendLine(header);
+                contents.AppendLine(String.Format("Content-Disposition: form-data; name=\"{0}\"", "key"));
+                contents.AppendLine();
+                contents.AppendLine(tpkey);
+
+                contents.AppendLine(header);
+                contents.AppendLine(String.Format("Content-Disposition: form-data; name=\"{0}\"", "consumer_token"));
+                contents.AppendLine();
+                contents.AppendLine(contoken);
+
+                contents.AppendLine(header);
+                contents.AppendLine(String.Format("Content-Disposition: form-data; name=\"{0}\"", "consumer_secret"));
+                contents.AppendLine();
+                contents.AppendLine(consecret);
+
+                contents.AppendLine(header);
+                contents.AppendLine(String.Format("Content-Disposition: form-data; name=\"{0}\"", "oauth_token"));
+                contents.AppendLine();
+                contents.AppendLine(usrtoken);
+
+                contents.AppendLine(header);
+                contents.AppendLine(String.Format("Content-Disposition: form-data; name=\"{0}\"", "oauth_secret"));
+                contents.AppendLine();
+                contents.AppendLine(usrsecret);
+
+                if (!String.IsNullOrEmpty(tweetMessage))
+                {
+                    contents.AppendLine(header);
+                    contents.AppendLine(String.Format("Content-Disposition: form-data; name=\"{0}\"", "message"));
+                    contents.AppendLine();
+                    contents.AppendLine(tweetMessage);
+                }
+
+                contents.AppendLine(footer);
+                byte[] bytes = Encoding.GetEncoding(encoding).GetBytes(contents.ToString());
+                request.ContentLength = bytes.Length;
+
+                string mediaurl = "";
+                try
+                {
+                    using (Stream requestStream = request.GetRequestStream()) // this is where the bug is due to not being able to seek.
+                    {
+                        requestStream.Write(bytes, 0, bytes.Length); // No problem the image is posted and tweet is posted
+                        requestStream.Close();
+                        using (HttpWebResponse response = (HttpWebResponse)request.GetResponse()) // here I can't get the response
+                        {
+                            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                            {
+                                string result = reader.ReadToEnd();
+
+                                XDocument doc = XDocument.Parse(result); // this shows no root elements and fails here
+                // taken from http://stackoverflow.com/questions/3338837/porting-the-twitpic-api-curl-example-to-c-multipart-data
+                           //     XElement rsp = doc.Element("rsp");
+                           //     string status = rsp.Attribute(XName.Get("status")) != null ? rsp.Attribute(XName.Get("status")).Value : rsp.Attribute(XName.Get("stat")).Value;
+                           //     mediaurl = rsp.Element("mediaurl").Value;
+                                mediaurl = doc.Element("image").Element("url").Value;
+                                return mediaurl;
+                            }
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ex.ToString();
+                }
+                return mediaurl;
+            }
+        }
         /*        private void OnReceive(IAsyncResult ar)
                 {
                     Debug.WriteLine("I got some stuff yo"); // Output this to the debug window if data is received
