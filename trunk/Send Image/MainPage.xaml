@@ -52,9 +52,11 @@
                      VerticalAlignment="Top" HorizontalAlignment="Right" 
                      FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,6,47,0" />
             <!--Grid Row 1: Image Selection Button >-->
-                <Button Content="Choose Photo" FontFamily="Verdana" FontSize="22" Height="72" HorizontalAlignment="Left" Margin="134,95,0,0" Name="button1" VerticalAlignment="Top" Width="214" Click="button1_Click" />
-                <Image Height="204" HorizontalAlignment="Left" Margin="84,185,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="311" />
-                <Button Content="Upload" FontFamily="Verdana" FontSize="22" Height="72" HorizontalAlignment="Left" Margin="134,426,0,0" Name="upload1" VerticalAlignment="Top" Width="214" Click="upload1_Click" />
+            <Button Content="Select New" FontFamily="Verdana" FontSize="22" Height="72" HorizontalAlignment="Left" Margin="67,107,0,0" Name="button1" VerticalAlignment="Top" Width="180" Click="button1_Click" />
+            <Image Height="204" HorizontalAlignment="Left" Margin="84,185,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="311" />
+            <Button Content="Upload" FontFamily="Verdana" FontSize="22" Height="72" HorizontalAlignment="Left" Margin="134,395,0,0" Name="upload1" VerticalAlignment="Top" Width="214" Click="upload1_Click" />
+            <HyperlinkButton Content="Edit" Height="47" HorizontalAlignment="Left" Margin="134,473,0,0" Name="editButton" VerticalAlignment="Top" Width="214" Click="editButton_Click" />
+            <Button Content="Select Old" Height="72" HorizontalAlignment="Left" Margin="235,107,0,0" Name="button2" VerticalAlignment="Top" Width="180" FontFamily="Verdana" FontSize="22" Click="button2_Click" />
         </Grid>
     </Grid>
     <!--Sample code showing usage of ApplicationBar-->
