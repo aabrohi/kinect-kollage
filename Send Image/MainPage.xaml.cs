@@ -16,6 +16,7 @@ using Microsoft.Phone.Tasks;
 using System.Windows.Media.Imaging;
 using Microsoft.Phone;
 using System.IO;
+using System.IO.IsolatedStorage;
 
 using System.Net.Sockets;
 using System.Text;
@@ -47,6 +48,20 @@ namespace Send_Image
                 case TaskResult.OK:
                     BinaryReader objReader = new BinaryReader(e.ChosenPhoto);
                     image1.Source = new BitmapImage(new Uri(e.OriginalFileName));
+                    // New Code
+                    var contents = new byte[1024];
+                    using (var store = IsolatedStorageFile.GetUserStoreForApplication())
+                    {
+                        using (var local = new IsolatedStorageFileStream("image.jpg", FileMode.Create, store))
+                        {
+                            int bytes;
+                            while ((bytes = e.ChosenPhoto.Read(contents, 0, contents.Length)) > 0)
+                            {
+                                local.Write(contents, 0, bytes);
+                            }
+                        }
+                    }
+                            
                     break;
                 case TaskResult.Cancel:
                     MessageBox.Show("Cancelled");
@@ -103,5 +118,20 @@ namespace Send_Image
             return true;
         }
         #endregion
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            using (var store = IsolatedStorageFile.GetUserStoreForApplication())
+            {
+                var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                var imageAsBitmap = Microsoft.Phone.PictureDecoder.DecodeJpeg(filestream);
+                image1.Source = imageAsBitmap;
+            }
+        }
     }
 }
