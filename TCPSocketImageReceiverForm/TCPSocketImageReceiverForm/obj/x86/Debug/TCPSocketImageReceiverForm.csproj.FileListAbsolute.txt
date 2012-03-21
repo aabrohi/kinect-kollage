@@ -7,3 +7,5 @@ C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPSocketImageReceiverFo
 C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.exe
 C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.pdb
 C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\bin\Debug\TwiPLi.dll
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.exe
+C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.pdb
