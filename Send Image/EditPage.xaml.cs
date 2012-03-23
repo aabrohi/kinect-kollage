@@ -33,5 +33,20 @@ namespace Send_Image
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ShapePage.xaml", UriKind.Relative));
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
