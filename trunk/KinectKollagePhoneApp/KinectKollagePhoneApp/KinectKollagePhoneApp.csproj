@@ -75,6 +75,9 @@
     <Compile Include="ShapePage.xaml.cs">
       <DependentUpon>ShapePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TextPage.xaml.cs">
+      <DependentUpon>TextPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UDPSocket.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +100,10 @@
     <Page Include="ShapePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TextPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
