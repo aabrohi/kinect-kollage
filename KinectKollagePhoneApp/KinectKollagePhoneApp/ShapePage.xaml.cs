@@ -47,7 +47,7 @@ namespace KinectKollagePhoneApp
             IsolatedStorageFileStream myFileStream = myStore.CreateFile("tempJPEG");
 
             WriteableBitmap wb = new WriteableBitmap(ContentPanelCanvas, null);
-            wb.SaveJpeg(myFileStream, wb.PixelWidth, wb.PixelHeight, 0, 100);
+            wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
             myFileStream.Close();
 
             myFileStream = myStore.OpenFile("tempJPEG", System.IO.FileMode.Open, System.IO.FileAccess.Read);
