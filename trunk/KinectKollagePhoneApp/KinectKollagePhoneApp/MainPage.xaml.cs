@@ -66,12 +66,13 @@ namespace KinectKollagePhoneApp
                             }
                         }
                     }
-                    BitmapImage bi = new BitmapImage();
-                    bi.SetSource(e.ChosenPhoto);
-                    Uri uri = new Uri(e.OriginalFileName);
-                    image2 = e.OriginalFileName;
-                    Debug.WriteLine(image2);
                     break;
+                //    BitmapImage bi = new BitmapImage();
+                //    bi.SetSource(e.ChosenPhoto);
+                //    Uri uri = new Uri(e.OriginalFileName);
+                //    image2 = e.OriginalFileName;
+                //    Debug.WriteLine(image2);
+                //    break;
                 case TaskResult.Cancel:
                     MessageBox.Show("Cancelled");
                     break;
@@ -83,42 +84,22 @@ namespace KinectKollagePhoneApp
 
         private void upload1_Click(object sender, RoutedEventArgs e)
         {
-            // Make sure we can perform this action with valid data
-            if (ValidateRemoteHost())
-            {
-
-                // Instantiate the TCPSocket
-                SocketClient client = new SocketClient();
-                string result = client.Connect(txtRemoteHost.Text, IMAGE_PORT);
-
-                //         result = client.Send(Encoding.UTF8.GetBytes(message));
-                string base64String = Convert.ToBase64String(ReadImageFile(image2));
-                //Debug.WriteLine("I'm sending this: " + base64String);
-                Debug.WriteLine("First part of the buffer: " + Encoding.UTF8.GetBytes(base64String + "<EOF>").Length);
-                result = client.Send(Encoding.UTF8.GetBytes(base64String));
-                Console.WriteLine("Send success!");
-
-                // Close the socket connection explicitly
-                //                client.Close();
-
-                ///////////////////////////////////////////////////////////////
-                // Convert image to WriteableBitmap
-            }
+            NavigationService.Navigate(new Uri("/UploadPage.xaml", UriKind.Relative));
         }
 
-        private static byte[] ReadImageFile(String img)
-        {
+        //private static byte[] ReadImageFile(String img)
+        //{
 
-            Uri jpegUri = new Uri(img, UriKind.Relative);
-            StreamResourceInfo sri = Application.GetResourceStream(jpegUri);
+        //    Uri jpegUri = new Uri(img, UriKind.Relative);
+        //    StreamResourceInfo sri = Application.GetResourceStream(jpegUri);
 
-            byte[] buf = new byte[sri.Stream.Length];       //need to create a new buf everytime to account for varying image sizes
-            //remedy: do not upload the same picture twice in a row/be a David
-            //how to fix later... clear out the image1 from the screen everytime you click upload
-            sri.Stream.Read(buf, 0, buf.Length);
+        //    byte[] buf = new byte[sri.Stream.Length];       //need to create a new buf everytime to account for varying image sizes
+        //    //remedy: do not upload the same picture twice in a row/be a David
+        //    //how to fix later... clear out the image1 from the screen everytime you click upload
+        //    sri.Stream.Read(buf, 0, buf.Length);
 
-            return buf;
-        }
+        //    return buf;
+        //}
 
         #region UI Validation
         /// <summary>

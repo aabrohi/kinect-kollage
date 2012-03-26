@@ -31,3 +31,4 @@ C:\Users\David\Documents\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhone
 C:\Users\David\Documents\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\KinectKollagePhoneApp.pdb
 C:\Users\David\Documents\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\XapCacheFile.xml
 C:\Users\David\Documents\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\TextPage.g.i.cs
+C:\Users\David\Documents\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\UploadPage.g.i.cs
