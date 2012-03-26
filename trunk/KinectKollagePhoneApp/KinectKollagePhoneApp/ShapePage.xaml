@@ -1,0 +1,95 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="KinectKollagePhoneApp.ShapePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="EDIT PAGE" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Stickers" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Canvas x:Name="ContentPanelCanvas" Grid.Row="1" HorizontalAlignment="Left" Background="transparent"  Margin="83,32,0,0" VerticalAlignment="Top" Width="311" Height="204">
+                <Image Height="204" HorizontalAlignment="Left" Margin="0,0,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="311"/>
+
+            </Canvas>
+
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="83,0,0,0" Click="flower_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newflower.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="83,175,0,0" Click="heart_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newheart.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="213,0,0,0" Click="smiley_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newsmiley.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="213,175,0,0" Click="snowman_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newsnowman.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="344,0,0,0" Click="star_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newstar.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="344,175,0,0" Click="balloon_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newballoon.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <HyperlinkButton Content="Back" Height="30" HorizontalAlignment="Left" Margin="130,505,0,0" Name="backButton1" VerticalAlignment="Top" Width="200" Click="backButton1_Click" />
+            <HyperlinkButton Content="Save" Height="30" HorizontalAlignment="Left" Margin="130,550,0,0" Name="saveButton1" VerticalAlignment="Top" Width="200" Click="saveButton1_Click" />
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
