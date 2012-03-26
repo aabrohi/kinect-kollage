@@ -19,12 +19,13 @@ namespace Send_Image
 {
     public partial class ShapePage : PhoneApplicationPage
     {
+        private int stickerNum;
         private Point currentPoint;
         private Point oldPoint;
         public ShapePage()
         {
             InitializeComponent();
-            this.ContentPanelCanvas.MouseMove += new MouseEventHandler(ContentPanelCanvas_MouseMove);
+            //this.ContentPanelCanvas.MouseMove += new MouseEventHandler(ContentPanelCanvas_MouseMove);
             this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(ContentPanelCanvas_MouseLeftButtonDown);
             using (var store = IsolatedStorageFile.GetUserStoreForApplication())
             {
@@ -54,43 +55,76 @@ namespace Send_Image
             Picture pic = library.SavePicture("NewPicture.jpg", myFileStream);
             //MessageBox.Show("Image saved");
             myFileStream.Close();
-            
-            //NavigationService.Navigate(new Uri("/SavePage.xaml", UriKind.Relative));
         }
 
+        private void flower_Click(object sender, RoutedEventArgs e)
+        {
+            stickerNum = 1;
+        }
+        private void heart_Click(object sender, RoutedEventArgs e)
+        {
+            stickerNum = 2;
+        }
+        private void smiley_Click(object sender, RoutedEventArgs e)
+        {
+            stickerNum = 3;
+        }
+        private void snowman_Click(object sender, RoutedEventArgs e)
+        {
+            stickerNum = 4;
+        }
+        private void star_Click(object sender, RoutedEventArgs e)
+        {
+            stickerNum = 5;
+        }
+        private void balloon_Click(object sender, RoutedEventArgs e)
+        {
+            stickerNum = 6;
+        }
+        
         void ContentPanelCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             currentPoint = e.GetPosition(ContentPanelCanvas);
             oldPoint = currentPoint;
+            switch(stickerNum)
+            {
+                case 1:
+                    Image temp1 = new Image();
+                    temp1.Source = new BitmapImage(new Uri("newflower.png", UriKind.RelativeOrAbsolute));
+                    temp1.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
+                    this.ContentPanelCanvas.Children.Add(temp1);
+                break;
+                case 2:
+                    Image temp2 = new Image();
+                    temp2.Source = new BitmapImage(new Uri("newheart.png", UriKind.RelativeOrAbsolute));
+                    temp2.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
+                    this.ContentPanelCanvas.Children.Add(temp2);
+                break;
+                case 3:
+                    Image temp3 = new Image();
+                    temp3.Source = new BitmapImage(new Uri("newsmiley.png", UriKind.RelativeOrAbsolute));
+                    temp3.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
+                    this.ContentPanelCanvas.Children.Add(temp3);
+                break;
+                case 4:
+                    Image temp4 = new Image();
+                    temp4.Source = new BitmapImage(new Uri("newsnowman.png", UriKind.RelativeOrAbsolute));
+                    temp4.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
+                    this.ContentPanelCanvas.Children.Add(temp4);
+                break;
+                case 5:
+                    Image temp5 = new Image();
+                    temp5.Source = new BitmapImage(new Uri("newstar.png", UriKind.RelativeOrAbsolute));
+                    temp5.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
+                    this.ContentPanelCanvas.Children.Add(temp5);
+                break;
+                case 6:
+                    Image temp6 = new Image();
+                    temp6.Source = new BitmapImage(new Uri("newballoon.png", UriKind.RelativeOrAbsolute));
+                    temp6.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
+                    this.ContentPanelCanvas.Children.Add(temp6);
+                break;
+            }
         }
-
-        void ContentPanelCanvas_MouseMove(object sender, MouseEventArgs e)
-        {
-
-            currentPoint = e.GetPosition(this.ContentPanelCanvas);
-
-            Line line = new Line() { X1 = currentPoint.X, Y1 = currentPoint.Y, X2 = oldPoint.X, Y2 = oldPoint.Y };
-
-            line.Stroke = new SolidColorBrush(Colors.Purple);
-            line.StrokeThickness = 15;
-
-            this.ContentPanelCanvas.Children.Add(line);
-            oldPoint = currentPoint;
-
-            //Line line = new Line();
-            //Point point1 = new Point();
-            //point1.X = 10.0;
-            //point1.Y = 100.0;
-
-            //Point point2 = new Point();
-            //point2.X = 150.0;
-            //point2.Y = 100.0;
-
-            //line.X1 = point1.X;
-            //line.Y1 = point1.Y;
-            //line.X2 = point2.X;
-            //line.Y2 = point2.Y;
-        }
-       
     }
 }
