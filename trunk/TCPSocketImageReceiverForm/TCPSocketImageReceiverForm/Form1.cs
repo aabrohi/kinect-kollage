@@ -167,15 +167,17 @@ namespace TCPSocketImageReceiverForm
             byte[] imageBytes = Convert.FromBase64String(content);
 
             int number = random.Next(0, 100);
-            string thefilename = "C:\\Users\\ddsniper\\Downloads\\CCT.NUI (12689)\\Images\\" + "picture_" + number + ".jpg";
+            string thefilename = "C:\\Users\\ddsniper\\Documents\\KK4K\\kinect_server\\CCT.NUI.Samples\\bin\\Debug\\Images\\" + "picture_" + number + ".jpg";
             Debug.WriteLine("Writing the picture to " + thefilename);
             FileStream fs = File.Create(@thefilename);
             fs.Write(imageBytes, 0, imageBytes.Length);
-
+        /*
             TwitPic tw = new TwitPic();
             Debug.WriteLine("image/png " + "image_ " + number + " " + thefilename + " " + "f1df26cd49afe58d92fff17cdd1c94bf " + "494611009-ybbVnZ9ThmVUhN65QvH0x2l48BcXUtF0pNG8AUq4 " + "YZ2eGUbGnYz1ratWweQD1fpK1JuxAUtJ4nIZBA1Y " + "cflG9inzlNltp2Znw5zEWA " + "CDS4bQi9NRdRRBGR4Am1skJNRonHbGrsBFwUmpk ");
             string upload_script = tw.UploadPhoto(imageBytes, "image/png", "image_" + number, thefilename, "f1df26cd49afe58d92fff17cdd1c94bf", "494611009-ybbVnZ9ThmVUhN65QvH0x2l48BcXUtF0pNG8AUq4", "YZ2eGUbGnYz1ratWweQD1fpK1JuxAUtJ4nIZBA1Y", "cflG9inzlNltp2Znw5zEWA", "CDS4bQi9NRdRRBGR4Am1skJNRonHbGrsBFwUmpk").ToString();
             Debug.WriteLine("Result of upload_script =" + upload_script);
+         
+        */
             fs.Close();
         }
         public class TwitPic

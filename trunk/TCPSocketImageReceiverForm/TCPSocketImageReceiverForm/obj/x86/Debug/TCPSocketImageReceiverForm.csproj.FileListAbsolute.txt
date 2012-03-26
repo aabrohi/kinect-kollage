@@ -9,3 +9,12 @@ C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPSocketImageReceiverFo
 C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\bin\Debug\TwiPLi.dll
 C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.exe
 C:\Users\ddsniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.pdb
+C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.exe
+C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.pdb
+C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\bin\Debug\TCPSocketImageReceiverForm.exe
+C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\bin\Debug\TCPSocketImageReceiverForm.pdb
+C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\bin\Debug\TwiPLi.dll
+C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.Properties.Resources.resources
+C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\GenerateResource.write.1.tlog
