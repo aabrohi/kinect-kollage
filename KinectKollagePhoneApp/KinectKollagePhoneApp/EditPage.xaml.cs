@@ -45,7 +45,7 @@ namespace KinectKollagePhoneApp
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("/TextPage.xaml", UriKind.Relative));
         }
 
     }
