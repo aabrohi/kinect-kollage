@@ -1,0 +1,16 @@
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\Bin\Debug\ApplicationIcon.png
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\Bin\Debug\Background.png
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\Bin\Debug\KinectKollagePhoneApp.dll
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\Bin\Debug\KinectKollagePhoneApp.pdb
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\Bin\Debug\AppManifest.xaml
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\Bin\Debug\KinectKollagePhoneApp.xap
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\App.g.i.cs
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\EditPage.g.i.cs
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\MainPage.g.i.cs
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\PenPage.g.i.cs
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\ShapePage.g.i.cs
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\KinectKollagePhoneApp.g.resources
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\KinectKollagePhoneApp.dll
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\KinectKollagePhoneApp.pdb
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\KinectKollagePhoneApp\KinectKollagePhoneApp\obj\Debug\XapCacheFile.xml
