@@ -21,13 +21,18 @@ using System.IO.IsolatedStorage;
 using System.Net.Sockets;
 using System.Text;
 
+using System.Diagnostics;
+using System.Windows.Resources;
+
 namespace KinectKollagePhoneApp
 {
     public partial class MainPage : PhoneApplicationPage
     {
 
         // Constants
-        const int IMAGE_PORT = 17;  // The Echo protocol uses port 14, since this is unassigned
+        const int IMAGE_PORT = 7070;  // The Echo protocol uses port 14, since this is unassigned
+
+        String image2;
 
         // Constructor
         public MainPage()
@@ -48,7 +53,7 @@ namespace KinectKollagePhoneApp
                 case TaskResult.OK:
                     BinaryReader objReader = new BinaryReader(e.ChosenPhoto);
                     image1.Source = new BitmapImage(new Uri(e.OriginalFileName));
-                    // New Code
+                    // New code
                     var contents = new byte[1024];
                     using (var store = IsolatedStorageFile.GetUserStoreForApplication())
                     {
@@ -61,7 +66,11 @@ namespace KinectKollagePhoneApp
                             }
                         }
                     }
-
+                    BitmapImage bi = new BitmapImage();
+                    bi.SetSource(e.ChosenPhoto);
+                    Uri uri = new Uri(e.OriginalFileName);
+                    image2 = e.OriginalFileName;
+                    Debug.WriteLine(image2);
                     break;
                 case TaskResult.Cancel:
                     MessageBox.Show("Cancelled");
@@ -77,28 +86,38 @@ namespace KinectKollagePhoneApp
             // Make sure we can perform this action with valid data
             if (ValidateRemoteHost())
             {
-                // Convert image to WriteableBitmap
-                WriteableBitmap bmp = new WriteableBitmap(image1, null);
 
-                // Convert to byte array
-                int[] p = bmp.Pixels;
-                int len = p.Length * 4;
-                byte[] imageByteArray = new byte[len]; //ARGB array
-                Buffer.BlockCopy(p, 0, imageByteArray, 0, len);
-                string chosenPhoto = Convert.ToBase64String(imageByteArray);
+                // Instantiate the TCPSocket
+                SocketClient client = new SocketClient();
+                string result = client.Connect(txtRemoteHost.Text, IMAGE_PORT);
 
-                // Instantiate the UDPSocket
-                UDPSocket client = new UDPSocket();
-
-                // Attempt to send our message to the server
-                string result = client.Send(txtRemoteHost.Text, IMAGE_PORT, chosenPhoto); //need to fix this...
-
-                // Receive a response from the server
-                result = client.Receive(IMAGE_PORT);
+                //         result = client.Send(Encoding.UTF8.GetBytes(message));
+                string base64String = Convert.ToBase64String(ReadImageFile(image2));
+                //Debug.WriteLine("I'm sending this: " + base64String);
+                Debug.WriteLine("First part of the buffer: " + Encoding.UTF8.GetBytes(base64String + "<EOF>").Length);
+                result = client.Send(Encoding.UTF8.GetBytes(base64String));
+                Console.WriteLine("Send success!");
 
                 // Close the socket connection explicitly
-                client.Close();
+                //                client.Close();
+
+                ///////////////////////////////////////////////////////////////
+                // Convert image to WriteableBitmap
             }
+        }
+
+        private static byte[] ReadImageFile(String img)
+        {
+
+            Uri jpegUri = new Uri(img, UriKind.Relative);
+            StreamResourceInfo sri = Application.GetResourceStream(jpegUri);
+
+            byte[] buf = new byte[sri.Stream.Length];       //need to create a new buf everytime to account for varying image sizes
+            //remedy: do not upload the same picture twice in a row/be a David
+            //how to fix later... clear out the image1 from the screen everytime you click upload
+            sri.Stream.Read(buf, 0, buf.Length);
+
+            return buf;
         }
 
         #region UI Validation

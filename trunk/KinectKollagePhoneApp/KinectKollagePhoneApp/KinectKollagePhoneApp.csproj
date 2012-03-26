@@ -75,6 +75,7 @@
     <Compile Include="ShapePage.xaml.cs">
       <DependentUpon>ShapePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SocketClient.cs" />
     <Compile Include="TextPage.xaml.cs">
       <DependentUpon>TextPage.xaml</DependentUpon>
     </Compile>
