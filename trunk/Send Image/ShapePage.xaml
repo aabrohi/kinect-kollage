@@ -23,7 +23,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="ApplicationTitle" Text="EDIT PAGE" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Stickers!!" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="PageTitle" Text="Stickers" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -32,7 +32,49 @@
                 <Image Height="204" HorizontalAlignment="Left" Margin="0,0,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="311"/>
 
             </Canvas>
-                
+
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="83,0,0,0" Click="flower_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newflower.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="83,175,0,0" Click="heart_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newheart.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="213,0,0,0" Click="smiley_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newsmiley.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="213,175,0,0" Click="snowman_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newsnowman.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="344,0,0,0" Click="star_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newstar.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="50" Width="50" HorizontalAlignment="Left" Margin="344,175,0,0" Click="balloon_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="newballoon.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <HyperlinkButton Content="Back" Height="30" HorizontalAlignment="Left" Margin="130,505,0,0" Name="backButton1" VerticalAlignment="Top" Width="200" Click="backButton1_Click" />
             <HyperlinkButton Content="Save" Height="30" HorizontalAlignment="Left" Margin="130,550,0,0" Name="saveButton1" VerticalAlignment="Top" Width="200" Click="saveButton1_Click" />
         </Grid>
