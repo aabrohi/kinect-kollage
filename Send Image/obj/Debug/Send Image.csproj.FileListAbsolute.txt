@@ -50,3 +50,5 @@ C:\Users\David\Documents\kinect-kollage\Send Image\obj\Debug\Send Image.dll
 C:\Users\David\Documents\kinect-kollage\Send Image\obj\Debug\Send Image.pdb
 C:\Users\David\Documents\kinect-kollage\Send Image\obj\Debug\XapCacheFile.xml
 C:\Users\David\Documents\kinect-kollage\Send Image\obj\Debug\ShapePage.g.i.cs
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\Send Image\obj\Debug\PenPage.g.i.cs
+C:\Users\Tejas\Documents\Spring12\kinect-kollage\Send Image\obj\Debug\ShapePage.g.i.cs

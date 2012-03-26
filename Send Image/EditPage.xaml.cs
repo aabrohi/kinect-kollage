@@ -40,7 +40,7 @@ namespace Send_Image
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("/PenPage.xaml", UriKind.Relative));
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
