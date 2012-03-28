@@ -101,38 +101,12 @@ namespace KinectKollagePhoneApp
         //    return buf;
         //}
 
-        #region UI Validation
-        /// <summary>
-        /// Validates the txtRemoteHost TextBox
-        /// </summary>
-        /// <returns>True if the txtRemoteHost contains valid data, False otherwise</returns>
-
-        private bool ValidateRemoteHost()
-        {
-            // The txtRemoteHost must contain some text
-            if (String.IsNullOrWhiteSpace(txtRemoteHost.Text))
-            {
-                MessageBox.Show("Please enter a host name");
-                return false;
-            }
-
-            return true;
-        }
-        #endregion
+       
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            using (var store = IsolatedStorageFile.GetUserStoreForApplication())
-            {
-                var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                var imageAsBitmap = Microsoft.Phone.PictureDecoder.DecodeJpeg(filestream);
-                image1.Source = imageAsBitmap;
-            }
-        }
     }
 }
