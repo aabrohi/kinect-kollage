@@ -22,8 +22,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="EDIT PAGE" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Stickers" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="Kinect Kollage" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Edit - Stickers" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -75,8 +75,8 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <HyperlinkButton Content="Back" Height="30" HorizontalAlignment="Left" Margin="130,505,0,0" Name="backButton1" VerticalAlignment="Top" Width="200" Click="backButton1_Click" />
-            <HyperlinkButton Content="Save" Height="30" HorizontalAlignment="Left" Margin="130,550,0,0" Name="saveButton1" VerticalAlignment="Top" Width="200" Click="saveButton1_Click" />
+            <Button Content="Back" Height="72" HorizontalAlignment="Left" Margin="130,470,0,0" Name="backButton1" VerticalAlignment="Top" Width="200" Click="backButton1_Click" />
+            <Button Content="Save" Height="72" HorizontalAlignment="Left" Margin="130,530,0,0" Name="saveButton1" VerticalAlignment="Top" Width="200" Click="saveButton1_Click" />
         </Grid>
     </Grid>
 
