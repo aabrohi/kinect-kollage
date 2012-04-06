@@ -53,7 +53,7 @@ namespace KinectKollagePhoneApp
             myFileStream = myStore.OpenFile("tempJPEG", System.IO.FileMode.Open, System.IO.FileAccess.Read);
             MediaLibrary library = new MediaLibrary();
             Picture pic = library.SavePicture("NewPicture.jpg", myFileStream);
-            //MessageBox.Show("Image saved");
+            MessageBox.Show("Image saved");
             myFileStream.Close();
             
             //NavigationService.Navigate(new Uri("/SavePage.xaml", UriKind.Relative));

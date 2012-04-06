@@ -22,8 +22,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="Image Sender" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Client" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="Kinect Kollage" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Main" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
 
@@ -56,7 +56,7 @@
             <Button Content="Browse" FontFamily="Verdana" FontSize="22" Height="72" HorizontalAlignment="Left" Margin="134,70,0,0" Name="button1" VerticalAlignment="Top" Width="180" Click="button1_Click" />
             <Image Height="204" HorizontalAlignment="Left" Margin="84,185,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="311" />
             <Button Content="Upload" FontFamily="Verdana" FontSize="22" Height="72" HorizontalAlignment="Left" Margin="118,395,0,0" Name="upload1" VerticalAlignment="Top" Width="214" Click="upload1_Click" />
-            <HyperlinkButton Content="Edit" Height="47" HorizontalAlignment="Left" Margin="118,473,0,0" Name="editButton" VerticalAlignment="Top" Width="214" Click="editButton_Click" />
+            <Button Content="Edit" Height="72" HorizontalAlignment="Left" Margin="118,473,0,0" Name="editButton" VerticalAlignment="Top" Width="214" Click="editButton_Click" />
         </Grid>
     </Grid>
     <!--Sample code showing usage of ApplicationBar-->
