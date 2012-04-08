@@ -17,10 +17,12 @@ using System.IO.IsolatedStorage;
 
 namespace KinectKollagePhoneApp
 {
-    public partial class ShapePage : PhoneApplicationPage
+    public partial class HorizShapePage : PhoneApplicationPage
     {
-        public int stickerNum { get; set; }
-        public ShapePage()
+        private int stickerNum;
+        private Point currentPoint;
+        private Point oldPoint;
+        public HorizShapePage()
         {
             InitializeComponent();
             BitmapImage bi = new BitmapImage();
@@ -28,24 +30,11 @@ namespace KinectKollagePhoneApp
             this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(ContentPanelCanvas_MouseLeftButtonDown);
             using (var store = IsolatedStorageFile.GetUserStoreForApplication())
             {
-                /*var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                var imageAsBitmap = Microsoft.Phone.PictureDecoder.DecodeJpeg(filestream);
-                image2.Source = imageAsBitmap;*/
-                if (store.FileExists("tempJPEG2"))
+                using (IsolatedStorageFileStream fileStream = store.OpenFile("tempJPEG2", System.IO.FileMode.Open, System.IO.FileAccess.Read))
                 {
-                    using (IsolatedStorageFileStream fileStream = store.OpenFile("tempJPEG2", System.IO.FileMode.Open, System.IO.FileAccess.Read))
-                    {
-                        bi.SetSource(fileStream);
-                        image2.Source = bi;
-                    }
+                    bi.SetSource(fileStream);
+                    image2.Source = bi;
                 }
-                else
-                {
-                    var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                    var imageAsBitmap = Microsoft.Phone.PictureDecoder.DecodeJpeg(filestream);
-                    image2.Source = imageAsBitmap;
-                }
-
             }
 
         }
@@ -98,7 +87,7 @@ namespace KinectKollagePhoneApp
 
         void ContentPanelCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            /*currentPoint = e.GetPosition(ContentPanelCanvas);
+            currentPoint = e.GetPosition(ContentPanelCanvas);
             oldPoint = currentPoint;
             switch (stickerNum)
             {
@@ -138,21 +127,15 @@ namespace KinectKollagePhoneApp
                     temp6.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
                     this.ContentPanelCanvas.Children.Add(temp6);
                     break;
-             
             }
-            */
         }
         private void PhoneApplicationPage_OrientationChanged(object sender, OrientationChangedEventArgs e)
         {
             //MessageBox.Show(this.Orientation.ToString());
             if ((e.Orientation & PageOrientation.Portrait) == (PageOrientation.Portrait))
             {
-
-            }
-            else
-            {
                 var myStore = IsolatedStorageFile.GetUserStoreForApplication();
-                if(myStore.FileExists("tempJPEG2"))
+                if (myStore.FileExists("tempJPEG2"))
                 {
                     myStore.DeleteFile("tempJPEG2");
                 }
@@ -163,22 +146,22 @@ namespace KinectKollagePhoneApp
                 wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
                 myFileStream.Close();
 
-                string url = "/HorizShapePage.xaml?sn=";
-                url += stickerNum.ToString();
-                NavigationService.Navigate(new Uri(url, UriKind.Relative));
+                NavigationService.Navigate(new Uri("/ShapePage.xaml", UriKind.Relative));
+            }
+            else
+            {
+
             }
         }
- /*       protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            MessageBox.Show(e.Content.ToString());
-            if (e.Content is HorizShapePage)
-            {
-                //MessageBox.Show("came from horiz page");
-                this.ContentPanelCanvas = (e.Content as HorizShapePage).ContentPanelCanvas;
-                this.ContentPanelCanvas.Children.Union((e.Content as HorizShapePage).ContentPanelCanvas.Children);
-           
-            }
+            string temp = NavigationContext.QueryString["sn"];
+            stickerNum = Convert.ToInt32(temp);
+            //MessageBox.Show(e.Content.ToString());
+            //this.ContentPanelCanvas = (e.Content as ShapePage).ContentPanelCanvas;
+            //MessageBox.Show(temp);
         }
-*/    }
+       
+    }
 }

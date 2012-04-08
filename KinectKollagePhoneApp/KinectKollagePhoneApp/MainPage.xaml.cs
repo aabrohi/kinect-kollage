@@ -32,12 +32,16 @@ namespace KinectKollagePhoneApp
         // Constants
         const int IMAGE_PORT = 7070;  // The Echo protocol uses port 14, since this is unassigned
 
-        String image2;
 
         // Constructor
         public MainPage()
         {
             InitializeComponent();
+            var myStore = IsolatedStorageFile.GetUserStoreForApplication();
+            if (myStore.FileExists("tempJPEG2"))
+            {
+                myStore.DeleteFile("tempJPEG2");
+            }
         }
         void button1_Click(object sender, RoutedEventArgs e)
         {
