@@ -22,7 +22,7 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="Kinect Kollage" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="KINECT KOLLAGE" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock x:Name="PageTitle" Text="Edit - Pen" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
@@ -31,9 +31,12 @@
             <Canvas x:Name="imageCanvas" HorizontalAlignment="Left" Background="transparent"  Margin="83,32,0,0" VerticalAlignment="Top" Width="311" Height="204">
                 <Image Height="204" HorizontalAlignment="Left" Margin="0,0,0,0" Name="img" Stretch="Fill" VerticalAlignment="Top" Width="311" />
             </Canvas>
-            <Button Content="Save" Height="72" HorizontalAlignment="Center" Margin="65,345,231,190" Name="button1" VerticalAlignment="Center" Width="160" Click="button1_Click" />
-            <Button Content="Back" Height="72" HorizontalAlignment="Left" Margin="137,437,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="200" Click="hyperlinkButton1_Click" />
-            <Button Content="Clear" Height="72" HorizontalAlignment="Left" Margin="274,345,0,0" Name="button2" VerticalAlignment="Top" Width="160" Click="button2_Click" />
+            <Button Content="Save" Height="72" HorizontalAlignment="Center" Margin="55,448,241,87" Name="button1" VerticalAlignment="Center" Width="160" Click="button1_Click" />
+            <HyperlinkButton Content="Back" Height="30" HorizontalAlignment="Left" Margin="141,540,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="200" Click="hyperlinkButton1_Click" />
+            <Button Content="Clear" Height="72" HorizontalAlignment="Left" Margin="264,448,0,0" Name="button2" VerticalAlignment="Top" Width="160" Click="button2_Click" />
+            <ListBox FontSize="26" Height="100" HorizontalAlignment="Left" Margin="0,321,0,0" Name="listBox1" VerticalAlignment="Top" Width="191" SelectionChanged="listBox1_SelectionChanged" />
+
+            <ListBox Height="100" HorizontalAlignment="Left" Margin="258,321,0,0" Name="listBox2" VerticalAlignment="Top" Width="191" SelectionChanged="listBox2_SelectionChanged" />
         </Grid>
     </Grid>
 
