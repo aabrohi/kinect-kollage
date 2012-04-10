@@ -47,7 +47,8 @@
                      FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,242,46,0" />
             <Button Content="Back" Height="72" HorizontalAlignment="Left" Margin="130,470,0,0" Name="backButton1" VerticalAlignment="Top" Width="200" Click="backButton1_Click" />
             <Button Content="Save" Height="72" HorizontalAlignment="Left" Margin="130,530,0,0" Name="saveButton1" VerticalAlignment="Top" Width="200" Click="saveButton1_Click" />
-            <Button Content="Color" Height="72" HorizontalAlignment="Left" Margin="130,410,0,0" Name="colorButton1" VerticalAlignment="Top" Width="200" Click="colorButton1_Click" />
+            <ListBox FontSize="26" Height="100" HorizontalAlignment="Left" Margin="12,350,0,0" Name="colorBox" VerticalAlignment="Top" Width="191" SelectionChanged="colorBox_SelectionChanged" />
+            <ListBox FontSize="26" Height="100" HorizontalAlignment="Left" Margin="250,350,0,0" Name="fontBox" VerticalAlignment="Top" Width="191" SelectionChanged="fontBox_SelectionChanged" />
         </Grid>
     </Grid>
  
