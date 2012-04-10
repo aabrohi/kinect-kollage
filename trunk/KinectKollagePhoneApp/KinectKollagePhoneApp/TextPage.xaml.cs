@@ -10,10 +10,12 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Windows.Resources;
 using Microsoft.Phone.Controls;
+using System.Windows.Resources;
+using System.IO;
 using Microsoft.Xna.Framework.Media;
 using System.IO.IsolatedStorage;
+
 
 
 namespace KinectKollagePhoneApp
@@ -22,11 +24,13 @@ namespace KinectKollagePhoneApp
     {
         private Point currentPoint;
         private Point oldPoint;
+        SolidColorBrush colorText;
+        FontFamily font;
         public TextPage()
         {
             InitializeComponent();
-            this.ContentPanelCanvas.MouseMove += new MouseEventHandler(ContentPanelCanvas_MouseMove);
-            this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(ContentPanelCanvas_MouseLeftButtonDown);
+            // this.ContentPanelCanvas.MouseMove += new MouseEventHandler(ContentPanelCanvas_MouseMove);
+           this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(ContentPanelCanvas_MouseLeftButtonDown);
             using (var store = IsolatedStorageFile.GetUserStoreForApplication())
             {
                 var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
@@ -34,7 +38,23 @@ namespace KinectKollagePhoneApp
                 image2.Source = imageAsBitmap;
             }
 
+            this.colorBox.Items.Add("Black");
+            this.colorBox.Items.Add("White");
+            this.colorBox.Items.Add("Blue");
+            this.colorBox.Items.Add("Green");
+            this.colorBox.Items.Add("Red");
+            this.colorBox.Items.Add("Yellow");
+            this.colorBox.Items.Add("Purple");
+
+            this.fontBox.Items.Add("Arial");
+            this.fontBox.Items.Add("Century Gothic");
+            this.fontBox.Items.Add("Comic Sans");
+            this.fontBox.Items.Add("Tacoma");
+            this.fontBox.Items.Add("Times New Roman");
+            this.fontBox.Items.Add("Verdana");
+
         }
+
 
         private void backButton1_Click(object sender, RoutedEventArgs e)
         {
@@ -59,10 +79,44 @@ namespace KinectKollagePhoneApp
             //NavigationService.Navigate(new Uri("/SavePage.xaml", UriKind.Relative));
         }
 
-        private void colorButton1_Click(object sender, RoutedEventArgs e)
+        private void colorBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           // ColorSlider slider = new ColorSlider();
+
+            string data = (sender as ListBox).SelectedItem as string;
+            if (data == "White")
+                colorText = new SolidColorBrush(Colors.White);
+            else if (data == "White")
+                colorText = new SolidColorBrush(Colors.White);
+            else if (data == "Blue")
+                colorText = new SolidColorBrush(Colors.Blue);
+            else if (data == "Green")
+                colorText = new SolidColorBrush(Colors.Green);
+            else if (data == "Red")
+                colorText = new SolidColorBrush(Colors.Red);
+            else if (data == "Yellow")
+                colorText = new SolidColorBrush(Colors.Yellow);
+            else if (data == "Purple")
+                colorText = new SolidColorBrush(Colors.Purple);
+
         }
+
+        private void fontBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string data = (sender as ListBox).SelectedItem as string;
+            if (data == "Arial")
+                font = new FontFamily("Arial");
+            else if (data == "Century Gothic")
+                font = new FontFamily("Century Gothic");
+            else if (data == "Comic Sans")
+                font = new FontFamily("Comic Sans");
+            else if (data == "Tacoma")
+                font = new FontFamily("Tacoma");
+            else if (data == "Times New Roman")
+                font = new FontFamily("Times New Roman");
+            else if (data == "Verdana")
+                font = new FontFamily("Verdana");
+        }
+
 
         private bool ValidateText()
         {
@@ -76,12 +130,12 @@ namespace KinectKollagePhoneApp
             return true;
         }
 
-
+        
         void ContentPanelCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             int fontsize = 16;
             currentPoint = e.GetPosition(ContentPanelCanvas);
-            oldPoint = currentPoint;
+           // oldPoint = currentPoint;
             ValidateText();
             TextBlock t = new TextBlock();
             if (String.IsNullOrWhiteSpace(textsize.Text))
@@ -89,28 +143,44 @@ namespace KinectKollagePhoneApp
                 fontsize = 16;
             }
           
-           // else fontsize = textsize.Text;
+            else
+            {
+                string tsize = textsize.Text.ToString();
+                try
+                {
+                    fontsize = Int32.Parse(tsize);
+                }
+
+                catch (FormatException)
+                {
+                    fontsize = 16;
+                }
+
+            }
+
+            t.FontFamily = font;
+            t.Foreground = colorText;
             t.FontSize = fontsize;
             t.Text = enteredtxt.Text.ToString();
             Canvas.SetTop(t, currentPoint.Y);
             Canvas.SetLeft(t, currentPoint.X);
             this.ContentPanelCanvas.Children.Add(t);
         }
-
-        void ContentPanelCanvas_MouseMove(object sender, MouseEventArgs e)
+        /*
+       void ContentPanelCanvas_MouseMove(object sender, MouseEventArgs e)
         {
 
-            currentPoint = e.GetPosition(this.ContentPanelCanvas);
+            //currentPoint = e.GetPosition(this.ContentPanelCanvas);
 
-            Line line = new Line() { X1 = currentPoint.X, Y1 = currentPoint.Y, X2 = oldPoint.X, Y2 = oldPoint.Y };
+            TextBlock t = new TextBlock();
+            t.Text = enteredtxt.Text.ToString();
+            TextBlock tp = t;
+            this.ContentPanelCanvas.Children.Remove(tp);
+            //Canvas.SetTop(t, currentPoint.Y);
+            //Canvas.SetLeft(t, currentPoint.X);
+            this.ContentPanelCanvas.Children.Add(t);
 
-            line.Stroke = new SolidColorBrush(Colors.Purple);
-            line.StrokeThickness = 15;
-
-            this.ContentPanelCanvas.Children.Add(line);
-            oldPoint = currentPoint;
-
-        }
-       
+        }   
+       */
     }
 }
