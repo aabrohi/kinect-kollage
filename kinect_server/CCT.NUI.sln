@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCT.NUI.Core", "CCT.NUI.Core\CCT.NUI.Core.csproj", "{AA2D3699-3FC9-43D6-AA24-CD930E487BC7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCT.NUI.Tests", "CCT.NUI.Tests\CCT.NUI.Tests.csproj", "{96DAA039-65E1-4540-908A-8B97AC13AE29}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCT.NUI.HandTracking", "CCT.NUI.HandTracking\CCT.NUI.HandTracking.csproj", "{E8310B15-6B84-40A5-856D-B0AE0EEE3771}"
 EndProject
@@ -22,10 +20,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCT.NUI.MouseControl", "CCT.NUI.MouseControl\CCT.NUI.MouseControl.csproj", "{486F10D4-B41E-4CB7-B8CF-9BD97636A646}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -45,16 +39,6 @@ Global
 		{AA2D3699-3FC9-43D6-AA24-CD930E487BC7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{AA2D3699-3FC9-43D6-AA24-CD930E487BC7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{AA2D3699-3FC9-43D6-AA24-CD930E487BC7}.Release|x86.ActiveCfg = Release|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{96DAA039-65E1-4540-908A-8B97AC13AE29}.Release|x86.ActiveCfg = Release|Any CPU
 		{E8310B15-6B84-40A5-856D-B0AE0EEE3771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8310B15-6B84-40A5-856D-B0AE0EEE3771}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8310B15-6B84-40A5-856D-B0AE0EEE3771}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -138,5 +122,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

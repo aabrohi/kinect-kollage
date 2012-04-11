@@ -105,13 +105,13 @@ namespace CCT.NUI.Visual
 
         protected virtual void DrawCenter(HandData hand, Graphics g)  
         {
-            g.FillEllipse(Brushes.Blue, hand.Location.X - 5, hand.Location.Y - 5, 10, 10);
+           // g.FillEllipse(Brushes.Blue, hand.Location.X - 5, hand.Location.Y - 5, 10, 10);
 
             if (hand.HasPalmPoint)
             {
-                g.FillEllipse(Brushes.SpringGreen, hand.PalmPoint.Value.X - 5, hand.PalmPoint.Value.Y - 5, 10, 10);
+              //  g.FillEllipse(Brushes.SpringGreen, hand.PalmPoint.Value.X - 5, hand.PalmPoint.Value.Y - 5, 10, 10);
                 var palmSize = hand.PalmDistance;
-                g.DrawEllipse(Pens.SpringGreen, (int)(hand.PalmPoint.Value.X - palmSize), (int)(hand.PalmPoint.Value.Y - palmSize), (int)(palmSize * 2), (int)(palmSize * 2));
+                //g.DrawEllipse(Pens.SpringGreen, (int)(hand.PalmPoint.Value.X - palmSize), (int)(hand.PalmPoint.Value.Y - palmSize), (int)(palmSize * 2), (int)(palmSize * 2));
             }
         } 
 
@@ -143,15 +143,15 @@ namespace CCT.NUI.Visual
         private void PaintFingerPoint(Graphics g, FingerPoint point)
         {
             g.FillEllipse(Brushes.Red, point.X - 5, point.Y - 5, 11, 11);
-            g.DrawString(point.Z.ToString(), this.font, Brushes.White, point.X + 3, point.Y + 3);
+           // g.DrawString(point.Z.ToString(), this.font, Brushes.White, point.X + 3, point.Y + 3);
 
-            g.FillEllipse(Brushes.Orange, point.BaseLeft.X - 5, point.BaseLeft.Y - 5, 11, 11);
-            g.FillEllipse(Brushes.Orange, point.BaseRight.X - 5, point.BaseRight.Y - 5, 11, 11);
+            //g.FillEllipse(Brushes.Orange, point.BaseLeft.X - 5, point.BaseLeft.Y - 5, 11, 11);
+            //g.FillEllipse(Brushes.Orange, point.BaseRight.X - 5, point.BaseRight.Y - 5, 11, 11);
 
             if (!CCT.NUI.Core.Point.IsZero(point.BaseLeft) && !CCT.NUI.Core.Point.IsZero(point.BaseRight))
             {
                 var baseCenter = CCT.NUI.Core.Point.Center(point.BaseLeft, point.BaseRight);
-                g.DrawLine(Pens.Orange, baseCenter.X, baseCenter.Y, point.X + point.DirectionVector.X * 60, point.Y + point.DirectionVector.Y * 60);
+                //g.DrawLine(Pens.Orange, baseCenter.X, baseCenter.Y, point.X + point.DirectionVector.X * 60, point.Y + point.DirectionVector.Y * 60);
             }
         }
     }

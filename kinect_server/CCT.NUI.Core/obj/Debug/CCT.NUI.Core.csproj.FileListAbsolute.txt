@@ -8,3 +8,10 @@ C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.Core\bin\Debug\CCT.NUI.Co
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.Core\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.Core\obj\Debug\CCT.NUI.Core.dll
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.Core\obj\Debug\CCT.NUI.Core.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Core\bin\Debug\CCT.NUI.Core.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Core\bin\Debug\CCT.NUI.Core.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Core\bin\Debug\OpenNI.net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Core\bin\Debug\XnVNITE.net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Core\obj\Debug\CCT.NUI.Core.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Core\obj\Debug\CCT.NUI.Core.pdb

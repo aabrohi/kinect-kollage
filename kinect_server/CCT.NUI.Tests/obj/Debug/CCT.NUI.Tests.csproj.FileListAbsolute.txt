@@ -16,3 +16,6 @@ C:\Users\ddsniper\Downloads\candescentnui-12515\CCT.NUI.Tests\bin\Debug\Moq.xml
 C:\Users\ddsniper\Downloads\candescentnui-12515\CCT.NUI.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\ddsniper\Downloads\candescentnui-12515\CCT.NUI.Tests\obj\Debug\CCT.NUI.Tests.dll
 C:\Users\ddsniper\Downloads\candescentnui-12515\CCT.NUI.Tests\obj\Debug\CCT.NUI.Tests.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Tests\obj\Debug\CCT.NUI.Tests.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Tests\obj\Debug\CCT.NUI.Tests.pdb

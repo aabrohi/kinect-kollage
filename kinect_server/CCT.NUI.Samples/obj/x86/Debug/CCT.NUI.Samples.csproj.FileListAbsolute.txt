@@ -52,3 +52,30 @@ C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.Samples\obj\x86\Debug\CCT
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.Samples\obj\x86\Debug\CCT.NUI.Samples.SettingsForm.resources
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.Samples\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.Samples\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Debug\CCT.NUI.Samples.exe
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Debug\CCT.NUI.Samples.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\config.xml
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\Images\P2.JPG
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\Images\P3.JPG
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\Images\P4.JPG
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\Images\P5.JPG
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.Samples.exe
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.Samples.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.Core.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.HandTracking.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.KinectSDK.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.Visual.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\Microsoft.Research.Kinect.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\OpenNI.net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\XnVNITE.net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.Core.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.HandTracking.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.KinectSDK.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Debug\CCT.NUI.Visual.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Debug\CCT.NUI.Samples.ImageManipulation.ImageForm.resources
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Debug\CCT.NUI.Samples.MainForm.resources
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Debug\CCT.NUI.Samples.Properties.Resources.resources
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Debug\CCT.NUI.Samples.SettingsForm.resources
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Debug\GenerateResource.write.1.tlog
