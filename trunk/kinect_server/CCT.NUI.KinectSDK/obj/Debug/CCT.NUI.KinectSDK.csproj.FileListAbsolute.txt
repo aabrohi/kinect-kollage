@@ -14,3 +14,13 @@ C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.KinectSDK\bin\Debug\CCT.N
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.KinectSDK\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.KinectSDK\obj\Debug\CCT.NUI.KinectSDK.dll
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.KinectSDK\obj\Debug\CCT.NUI.KinectSDK.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\bin\Debug\CCT.NUI.KinectSDK.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\bin\Debug\CCT.NUI.KinectSDK.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\bin\Debug\CCT.NUI.Core.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\bin\Debug\Microsoft.Research.Kinect.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\bin\Debug\OpenNI.Net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\bin\Debug\XnVNITE.net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\bin\Debug\CCT.NUI.Core.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\obj\Debug\CCT.NUI.KinectSDK.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.KinectSDK\obj\Debug\CCT.NUI.KinectSDK.pdb

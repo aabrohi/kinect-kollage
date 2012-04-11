@@ -18,3 +18,15 @@ C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.HandTracking\bin\Debug\CC
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.HandTracking\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.HandTracking\obj\Debug\CCT.NUI.HandTracking.dll
 C:\Users\ddsniper\Documents\KK4K\kinect_server\CCT.NUI.HandTracking\obj\Debug\CCT.NUI.HandTracking.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\bin\Debug\CCT.NUI.HandTracking.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\bin\Debug\CCT.NUI.HandTracking.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\bin\Debug\CCT.NUI.Core.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\bin\Debug\CCT.NUI.KinectSDK.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\bin\Debug\Microsoft.Research.Kinect.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\bin\Debug\OpenNI.Net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\bin\Debug\XnVNITE.net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\bin\Debug\CCT.NUI.Core.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\bin\Debug\CCT.NUI.KinectSDK.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\obj\Debug\CCT.NUI.HandTracking.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.HandTracking\obj\Debug\CCT.NUI.HandTracking.pdb

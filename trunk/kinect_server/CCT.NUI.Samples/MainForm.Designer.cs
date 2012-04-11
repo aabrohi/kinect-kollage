@@ -40,10 +40,10 @@
             this.radioButtonSDK = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonImageManipulation = new System.Windows.Forms.Button();
-            this.videoControl = new CCT.NUI.Visual.VideoControl();
             this.buttonHandDataFactory = new System.Windows.Forms.Button();
             this.buttonHandTracking = new System.Windows.Forms.Button();
             this.radioOpenNINite = new System.Windows.Forms.RadioButton();
+            this.videoControl = new CCT.NUI.Visual.VideoControl();
             this.SuspendLayout();
             // 
             // buttonClustering
@@ -86,7 +86,7 @@
             // buttonExit
             // 
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonExit.Location = new System.Drawing.Point(9, 704);
+            this.buttonExit.Location = new System.Drawing.Point(9, 679);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(246, 43);
             this.buttonExit.TabIndex = 11;
@@ -118,7 +118,7 @@
             // buttonSettings
             // 
             this.buttonSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonSettings.Location = new System.Drawing.Point(9, 655);
+            this.buttonSettings.Location = new System.Drawing.Point(9, 630);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(246, 43);
             this.buttonSettings.TabIndex = 10;
@@ -168,18 +168,6 @@
             this.buttonImageManipulation.UseVisualStyleBackColor = true;
             this.buttonImageManipulation.Click += new System.EventHandler(this.buttonImageManipulation_Click);
             // 
-            // videoControl
-            // 
-            this.videoControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.videoControl.BackColor = System.Drawing.Color.Black;
-            this.videoControl.Location = new System.Drawing.Point(264, 12);
-            this.videoControl.Name = "videoControl";
-            this.videoControl.Size = new System.Drawing.Size(943, 799);
-            this.videoControl.Stretch = false;
-            this.videoControl.TabIndex = 8;
-            // 
             // buttonHandDataFactory
             // 
             this.buttonHandDataFactory.Enabled = false;
@@ -213,11 +201,23 @@
             this.radioOpenNINite.UseVisualStyleBackColor = true;
             this.radioOpenNINite.CheckedChanged += new System.EventHandler(this.radioOpenNINite_CheckedChanged);
             // 
+            // videoControl
+            // 
+            this.videoControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.videoControl.BackColor = System.Drawing.Color.Black;
+            this.videoControl.Location = new System.Drawing.Point(264, 12);
+            this.videoControl.Name = "videoControl";
+            this.videoControl.Size = new System.Drawing.Size(1076, 710);
+            this.videoControl.Stretch = false;
+            this.videoControl.TabIndex = 8;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1217, 819);
+            this.ClientSize = new System.Drawing.Size(1350, 730);
             this.Controls.Add(this.radioOpenNINite);
             this.Controls.Add(this.buttonHandTracking);
             this.Controls.Add(this.buttonHandDataFactory);

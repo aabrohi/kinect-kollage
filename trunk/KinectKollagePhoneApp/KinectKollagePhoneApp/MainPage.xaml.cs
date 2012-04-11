@@ -88,7 +88,7 @@ namespace KinectKollagePhoneApp
 
         private void upload1_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/UploadPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Upload.xaml", UriKind.Relative)); //changed
         }
 
         //private static byte[] ReadImageFile(String img)

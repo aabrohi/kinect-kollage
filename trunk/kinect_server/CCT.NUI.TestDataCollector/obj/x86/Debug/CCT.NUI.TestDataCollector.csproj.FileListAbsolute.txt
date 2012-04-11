@@ -31,3 +31,36 @@ C:\Users\ddsniper\Downloads\candescentnui-12515\CCT.NUI.TestDataCollector\obj\x8
 C:\Users\ddsniper\Downloads\candescentnui-12515\CCT.NUI.TestDataCollector\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\ddsniper\Downloads\candescentnui-12515\CCT.NUI.TestDataCollector\obj\x86\Debug\CCT.NUI.TestDataCollector.exe
 C:\Users\ddsniper\Downloads\candescentnui-12515\CCT.NUI.TestDataCollector\obj\x86\Debug\CCT.NUI.TestDataCollector.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\config.xml
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.TestDataCollector.exe
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.TestDataCollector.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.Core.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.HandTracking.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.Visual.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\OpenNI.net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\XnVNITE.net.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.KinectSDK.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\Microsoft.Research.Kinect.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.Core.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.HandTracking.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.Visual.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\bin\Debug\CCT.NUI.KinectSDK.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\HandDisplayControl.baml
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\HandSettingsControl.baml
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\DisplayControl.g.cs
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\HandDisplayControl.g.cs
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\HandSettingsControl.g.cs
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\MainWindow.g.cs
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\App.g.cs
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\CCT.NUI.TestDataCollector_MarkupCompile.cache
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\CCT.NUI.TestDataCollector_MarkupCompile.lref
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\DisplayControl.baml
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\MainWindow.baml
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\CCT.NUI.TestDataCollector.g.resources
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\CCT.NUI.TestDataCollector.Properties.Resources.resources
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\CCT.NUI.TestDataCollector.exe
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.TestDataCollector\obj\x86\Debug\CCT.NUI.TestDataCollector.pdb

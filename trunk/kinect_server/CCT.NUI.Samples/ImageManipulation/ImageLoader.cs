@@ -24,7 +24,8 @@ namespace CCT.NUI.Samples.ImageManipulation
             var result = new List<InteractiveImage>();
 
             int x = this.startPositionX, y = this.startPositionY;
-            foreach (var imagePath in Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images"), "*.jpg"))
+            //Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images") taken out of the part below
+            foreach (var imagePath in Directory.GetFiles(@"Y:\\", "*.jpg"))
             {
                 var newImage = new InteractiveImage((System.Drawing.Bitmap)System.Drawing.Bitmap.FromFile(imagePath), x, y);
                 result.Add(newImage);
