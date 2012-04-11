@@ -68,8 +68,14 @@
     <Compile Include="EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HorizPenPage.xaml.cs">
+      <DependentUpon>HorizPenPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HorizShapePage.xaml.cs">
       <DependentUpon>HorizShapePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HorizTextPage.xaml.cs">
+      <DependentUpon>HorizTextPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -102,7 +108,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HorizPenPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="HorizShapePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HorizTextPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

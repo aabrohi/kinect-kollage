@@ -24,18 +24,36 @@ namespace KinectKollagePhoneApp
         private Point oldPoint;
         SolidColorBrush colorBrush;
         int brushSize;
+        string color = "";
+        string size = "";
         //WriteableBitmap writeableBitmapImg;
 
         public PenPage()
         {
             InitializeComponent();
-
+            BitmapImage bi = new BitmapImage();
             using (var store = IsolatedStorageFile.GetUserStoreForApplication())
             {
-                var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                /*var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 var imageAsBitmap = Microsoft.Phone.PictureDecoder.DecodeJpeg(filestream);
                 img.Source = imageAsBitmap;
+                 */
                 //img.Source = imageAsBitmap;
+
+                if (store.FileExists("tempJPEG2"))
+                {
+                    using (IsolatedStorageFileStream fileStream = store.OpenFile("tempJPEG2", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+                    {
+                        bi.SetSource(fileStream);
+                        img.Source = bi;
+                    }
+                }
+                else
+                {
+                    var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    var imageAsBitmap = Microsoft.Phone.PictureDecoder.DecodeJpeg(filestream);
+                    img.Source = imageAsBitmap;
+                }
 
 
             }
@@ -138,6 +156,7 @@ namespace KinectKollagePhoneApp
         private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string data = (sender as ListBox).SelectedItem as string;
+            color = data;
             if (data == "Black")
                 colorBrush = new SolidColorBrush(Colors.Black);
             else if (data == "White")
@@ -158,6 +177,7 @@ namespace KinectKollagePhoneApp
         private void listBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string data = (sender as ListBox).SelectedItem as string;
+            size = data;
             if (data == "1")
                 brushSize = 1;
             else if (data == "2")
@@ -187,6 +207,42 @@ namespace KinectKollagePhoneApp
             else if (data == "14")
                 brushSize = 14;
 
+        }
+        private void PhoneApplicationPage_OrientationChanged(object sender, OrientationChangedEventArgs e)
+        {
+            //MessageBox.Show(this.Orientation.ToString());
+            if ((e.Orientation & PageOrientation.Portrait) == (PageOrientation.Portrait))
+            {
+
+            }
+            else
+            {
+                var myStore = IsolatedStorageFile.GetUserStoreForApplication();
+                if (myStore.FileExists("tempJPEG2"))
+                {
+                    myStore.DeleteFile("tempJPEG2");
+                }
+
+                IsolatedStorageFileStream myFileStream = myStore.CreateFile("tempJPEG2");
+
+                WriteableBitmap wb = new WriteableBitmap(imageCanvas, null);
+                wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
+                myFileStream.Close();
+
+                string url = "/HorizPenPage.xaml?color=";
+                url += color.ToString();
+                //MessageBox.Show(color);
+                url += "&size=";
+                url += size.ToString();
+                //MessageBox.Show(size);
+                NavigationService.Navigate(new Uri(url, UriKind.Relative));
+            }
+        }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
+            e.Cancel = true;
         }
     }
 }
