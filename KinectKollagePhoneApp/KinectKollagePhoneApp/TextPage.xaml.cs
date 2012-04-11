@@ -130,7 +130,7 @@ namespace KinectKollagePhoneApp
             else if (data == "Century Gothic")
                 font = new FontFamily("Century Gothic");
             else if (data == "Comic Sans")
-                font = new FontFamily("Comic Sans");
+                font = new FontFamily("Comic Sans MS");
             else if (data == "Tacoma")
                 font = new FontFamily("Tacoma");
             else if (data == "Times New Roman")
