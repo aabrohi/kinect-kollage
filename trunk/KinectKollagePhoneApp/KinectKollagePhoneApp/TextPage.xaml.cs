@@ -23,19 +23,39 @@ namespace KinectKollagePhoneApp
     public partial class TextPage : PhoneApplicationPage
     {
         private Point currentPoint;
-        private Point oldPoint;
         SolidColorBrush colorText;
         FontFamily font;
+        int fontsize = 16;
+        string fontName = "";
+        string fontColor = "";
+        string text = "";
+
         public TextPage()
         {
             InitializeComponent();
+            BitmapImage bi = new BitmapImage();
             // this.ContentPanelCanvas.MouseMove += new MouseEventHandler(ContentPanelCanvas_MouseMove);
            this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(ContentPanelCanvas_MouseLeftButtonDown);
             using (var store = IsolatedStorageFile.GetUserStoreForApplication())
             {
-                var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                /*var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 var imageAsBitmap = Microsoft.Phone.PictureDecoder.DecodeJpeg(filestream);
                 image2.Source = imageAsBitmap;
+                */
+                if (store.FileExists("tempJPEG2"))
+                {
+                    using (IsolatedStorageFileStream fileStream = store.OpenFile("tempJPEG2", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+                    {
+                        bi.SetSource(fileStream);
+                        image2.Source = bi;
+                    }
+                }
+                else
+                {
+                    var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    var imageAsBitmap = Microsoft.Phone.PictureDecoder.DecodeJpeg(filestream);
+                    image2.Source = imageAsBitmap;
+                }
             }
 
             this.colorBox.Items.Add("Black");
@@ -83,8 +103,9 @@ namespace KinectKollagePhoneApp
         {
 
             string data = (sender as ListBox).SelectedItem as string;
-            if (data == "White")
-                colorText = new SolidColorBrush(Colors.White);
+            fontColor = data;
+            if (data == "Black")
+                colorText = new SolidColorBrush(Colors.Black);
             else if (data == "White")
                 colorText = new SolidColorBrush(Colors.White);
             else if (data == "Blue")
@@ -103,6 +124,7 @@ namespace KinectKollagePhoneApp
         private void fontBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string data = (sender as ListBox).SelectedItem as string;
+            fontName = data;
             if (data == "Arial")
                 font = new FontFamily("Arial");
             else if (data == "Century Gothic")
@@ -126,14 +148,13 @@ namespace KinectKollagePhoneApp
                 MessageBox.Show("Please enter text");
                 return false;
             }
-
+            text = enteredtxt.Text;
             return true;
         }
 
         
         void ContentPanelCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            int fontsize = 16;
             currentPoint = e.GetPosition(ContentPanelCanvas);
            // oldPoint = currentPoint;
             ValidateText();
@@ -165,6 +186,51 @@ namespace KinectKollagePhoneApp
             Canvas.SetTop(t, currentPoint.Y);
             Canvas.SetLeft(t, currentPoint.X);
             this.ContentPanelCanvas.Children.Add(t);
+        }
+
+        private void PhoneApplicationPage_OrientationChanged(object sender, OrientationChangedEventArgs e)
+        {
+            //MessageBox.Show(this.Orientation.ToString());
+            if ((e.Orientation & PageOrientation.Portrait) == (PageOrientation.Portrait))
+            {
+
+            }
+            else
+            {
+                ValidateText();
+                string tsize = textsize.Text.ToString();
+                var myStore = IsolatedStorageFile.GetUserStoreForApplication();
+                if (myStore.FileExists("tempJPEG2"))
+                {
+                    myStore.DeleteFile("tempJPEG2");
+                }
+
+                IsolatedStorageFileStream myFileStream = myStore.CreateFile("tempJPEG2");
+
+                WriteableBitmap wb = new WriteableBitmap(ContentPanelCanvas, null);
+                wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
+                myFileStream.Close();
+
+                string url = "/HorizTextPage.xaml?text=";
+                //string url = "/HorizTextPage.xaml";
+                url += text.ToString();
+                //MessageBox.Show(text.ToString());
+                url += "&color=";
+                url += fontColor.ToString();
+                //MessageBox.Show(fontColor.ToString());
+                url += "&name=";
+                url += fontName.ToString();
+                //MessageBox.Show(fontName.ToString());
+                url += "&size=";
+                url += tsize.ToString();
+                NavigationService.Navigate(new Uri(url, UriKind.Relative));
+            }
+        }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
+            e.Cancel = true;
         }
         /*
        void ContentPanelCanvas_MouseMove(object sender, MouseEventArgs e)

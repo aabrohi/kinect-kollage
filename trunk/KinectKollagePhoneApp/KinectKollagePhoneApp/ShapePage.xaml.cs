@@ -168,17 +168,11 @@ namespace KinectKollagePhoneApp
                 NavigationService.Navigate(new Uri(url, UriKind.Relative));
             }
         }
- /*       protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            base.OnNavigatedTo(e);
-            MessageBox.Show(e.Content.ToString());
-            if (e.Content is HorizShapePage)
-            {
-                //MessageBox.Show("came from horiz page");
-                this.ContentPanelCanvas = (e.Content as HorizShapePage).ContentPanelCanvas;
-                this.ContentPanelCanvas.Children.Union((e.Content as HorizShapePage).ContentPanelCanvas.Children);
-           
-            }
+            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
+            e.Cancel = true;
         }
-*/    }
+    }
 }
