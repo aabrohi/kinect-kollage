@@ -31,6 +31,11 @@ namespace CCT.NUI.Samples.ImageManipulation
         private IHandDataSource handDataSource;
         private HandLayer handLayer;
 
+        //These are variables that change per the computer that you are using the app on
+        int reset_counter = 0;
+        string thefilename = "C:\\Users\\dDSniper\\Downloads\\Screen\\test.jpg";
+        string thefilename_res = "C:\\Users\\dDSniper\\Downloads\\Screen\\test300.jpg";
+
         public ImageForm()
         {
             InitializeComponent();
@@ -150,19 +155,56 @@ namespace CCT.NUI.Samples.ImageManipulation
 
         private void ResetImages()
         {
+            
             foreach (var image in this.images.ToList())
             {
                 image.Reset();
             }
+
             this.Invalidate();
+
         }
+
+        private void AddImage()
+        {
+            FileInfo newestFile = null;
+
+            foreach (string fileName in Directory.GetFiles(@"Y:\\", "*.jpg"))
+            {
+
+                FileInfo file = new FileInfo(fileName);
+
+                if (newestFile == null || file.CreationTime > newestFile.CreationTime)
+
+                    newestFile = file;
+
+            }
+
+            var newImage = new InteractiveImage((System.Drawing.Bitmap)System.Drawing.Bitmap.FromFile(newestFile.FullName), 100, 100);
+            this.images.Add(newImage);
+        }
+
 
         void ImageForm_Paint(object sender, PaintEventArgs e)
         {
+            // Check to see if a new image has been uploaded every 50 times you paint the ImageForm
+            //if (reset_counter == 50)
+            //{
+            //    if (Directory.EnumerateFiles(@"Y:\\", "*.jpg").Count() > this.images.Count()) // test if a new image is found
+            //    {
+            //        this.AddImage(); // if it is reload the images, Adds new Photos!!!
+            //    }
+
+            //    reset_counter = 0;
+            //}
+
+            //reset_counter++;
+
             foreach (var image in this.images.ToList())
             {
                 image.Draw(e.Graphics);
             }
+
             this.handLayer.SetTargetSize(this.Size);
             this.handLayer.SetZoomHandFactor(1 / this.handLayer.ZoomFactor);
             this.handLayer.Paint(e.Graphics);
@@ -259,8 +301,7 @@ namespace CCT.NUI.Samples.ImageManipulation
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             System.Drawing.Image img = CaptureActiveWindow();
-            string thefilename = "C:\\Users\\ddsniper\\Downloads\\Screen\\test.jpg";
-            string thefilename_res = "C:\\Users\\ddsniper\\Downloads\\Screen\\test300.jpg";
+            
             img.Save(@thefilename, System.Drawing.Imaging.ImageFormat.Jpeg); 
             //markus' tweet code
             Random random = new Random();
