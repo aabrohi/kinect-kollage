@@ -18,3 +18,10 @@ C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiv
 C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.Properties.Resources.resources
 C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\ddsniper\Documents\KK4K\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\bin\Debug\TCPSocketImageReceiverForm.exe
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\bin\Debug\TCPSocketImageReceiverForm.pdb
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\bin\Debug\TwiPLi.dll
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\TCPSocketImageReceiverForm.Properties.Resources.resources
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\TCPSocketImageReceiverForm\TCPSocketImageReceiverForm\obj\x86\Debug\GenerateResource.write.1.tlog
