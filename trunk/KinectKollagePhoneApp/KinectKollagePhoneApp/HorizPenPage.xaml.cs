@@ -69,7 +69,7 @@ namespace KinectKollagePhoneApp
             this.ContentPanelCanvas.MouseMove += new MouseEventHandler(img_OnMouseMove);
             this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(img_OnMouseLeftButtonDown);
             
-            colorBrush = new SolidColorBrush(Colors.Purple);
+            //colorBrush = new SolidColorBrush(Colors.Purple);
             brushSize = 5;
 
         }
@@ -156,6 +156,8 @@ namespace KinectKollagePhoneApp
                 colorBrush = new SolidColorBrush(Colors.Yellow);
             else if (data == "Purple")
                 colorBrush = new SolidColorBrush(Colors.Purple);
+            else if (data == "Transparent")
+                colorBrush = new SolidColorBrush(Colors.Transparent);
 
         }
 

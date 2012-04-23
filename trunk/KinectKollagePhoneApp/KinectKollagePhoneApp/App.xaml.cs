@@ -56,6 +56,7 @@ namespace KinectKollagePhoneApp
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+           
 
         }
 

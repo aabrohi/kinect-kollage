@@ -42,6 +42,8 @@ namespace KinectKollagePhoneApp
             {
                 myStore.DeleteFile("tempJPEG2");
             }
+            MessageBox.Show("To edit, select a tool and rotate the phone horizontally.\nTo upload, sign in, select a photo from the phone, and upload.");
+
         }
         void button1_Click(object sender, RoutedEventArgs e)
         {
@@ -84,6 +86,9 @@ namespace KinectKollagePhoneApp
                     MessageBox.Show("Nothing Entered");
                     break;
             }
+
+            
+
         }
 
         private void upload1_Click(object sender, RoutedEventArgs e)
@@ -111,6 +116,6 @@ namespace KinectKollagePhoneApp
         {
             NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
         }
-
     }
+    
 }
