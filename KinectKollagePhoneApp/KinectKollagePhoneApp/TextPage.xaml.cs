@@ -26,16 +26,16 @@ namespace KinectKollagePhoneApp
         SolidColorBrush colorText;
         FontFamily font;
         int fontsize = 16;
-        string fontName = "";
-        string fontColor = "";
-        string text = "";
+        string fontName = "Arial";
+        string fontColor = "Black";
+        string text = " ";
 
         public TextPage()
         {
             InitializeComponent();
             BitmapImage bi = new BitmapImage();
             // this.ContentPanelCanvas.MouseMove += new MouseEventHandler(ContentPanelCanvas_MouseMove);
-           this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(ContentPanelCanvas_MouseLeftButtonDown);
+           //this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(ContentPanelCanvas_MouseLeftButtonDown);
             using (var store = IsolatedStorageFile.GetUserStoreForApplication())
             {
                 /*var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
@@ -145,7 +145,7 @@ namespace KinectKollagePhoneApp
             // The txtRemoteHost must contain some text
             if (String.IsNullOrWhiteSpace(enteredtxt.Text))
             {
-                MessageBox.Show("Please enter text");
+                //MessageBox.Show("Please enter text");
                 return false;
             }
             text = enteredtxt.Text;
@@ -153,7 +153,7 @@ namespace KinectKollagePhoneApp
         }
 
         
-        void ContentPanelCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        /*void ContentPanelCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             currentPoint = e.GetPosition(ContentPanelCanvas);
            // oldPoint = currentPoint;
@@ -186,8 +186,8 @@ namespace KinectKollagePhoneApp
             Canvas.SetTop(t, currentPoint.Y);
             Canvas.SetLeft(t, currentPoint.X);
             this.ContentPanelCanvas.Children.Add(t);
-        }
-
+        }*/
+        
         private void PhoneApplicationPage_OrientationChanged(object sender, OrientationChangedEventArgs e)
         {
             //MessageBox.Show(this.Orientation.ToString());
@@ -199,6 +199,8 @@ namespace KinectKollagePhoneApp
             {
                 ValidateText();
                 string tsize = textsize.Text.ToString();
+                if (tsize.Length == 0)
+                    tsize = fontsize.ToString();
                 var myStore = IsolatedStorageFile.GetUserStoreForApplication();
                 if (myStore.FileExists("tempJPEG2"))
                 {

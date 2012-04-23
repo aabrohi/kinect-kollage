@@ -28,28 +28,26 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Canvas x:Name="ContentPanelCanvas" Grid.Row="1" HorizontalAlignment="Left" Background="transparent"  Margin="83,32,0,0" VerticalAlignment="Top" Width="311" Height="204">
-                <Image Height="204" HorizontalAlignment="Left" Margin="0,0,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="311"/>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,0,0">
+            <Canvas x:Name="ContentPanelCanvas" Grid.Row="1" HorizontalAlignment="Left" Background="transparent"  Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Height="320">
+                <Image Height="320" HorizontalAlignment="Left" Margin="0,0,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="480"/>
 
             </Canvas>
-            
-            <TextBlock Text="Text:"  
+
+            <TextBlock Text="Text"  
                        VerticalAlignment="Center" HorizontalAlignment="Center" 
-                       FontSize="{StaticResource PhoneFontSizeNormal}" Margin="37,259,379,321" />
-            <TextBox x:Name="enteredtxt" Height="70" Width="175" 
+                       FontSize="24" Margin="12,350,420,225" />
+            <TextBox x:Name="enteredtxt" Height="70" Width="264" 
                      VerticalAlignment="Top" HorizontalAlignment="Right" 
-                     FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,242,198,0" />
-            <TextBlock Text="Text Size:"  
+                     FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,333,168,0" />
+            <TextBlock Text="Text Size"  
                        VerticalAlignment="Center" HorizontalAlignment="Center" 
-                       FontSize="{StaticResource PhoneFontSizeNormal}" Margin="264,259,112,321" />
-            <TextBox x:Name="textsize" Height="70" Width="60" 
+                       FontSize="24" Margin="316,350,68,224" />
+            <TextBox x:Name="textsize" Height="70" Width="75" 
                      VerticalAlignment="Top" HorizontalAlignment="Right" 
-                     FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,242,46,0" />
-            <Button Content="Back" Height="72" HorizontalAlignment="Left" Margin="130,470,0,0" Name="backButton1" VerticalAlignment="Top" Width="200" Click="backButton1_Click" />
-            <Button Content="Save" Height="72" HorizontalAlignment="Left" Margin="130,530,0,0" Name="saveButton1" VerticalAlignment="Top" Width="200" Click="saveButton1_Click" />
-            <ListBox FontSize="26" Height="100" HorizontalAlignment="Left" Margin="12,350,0,0" Name="colorBox" VerticalAlignment="Top" Width="191" SelectionChanged="colorBox_SelectionChanged" />
-            <ListBox FontSize="26" Height="100" HorizontalAlignment="Left" Margin="250,350,0,0" Name="fontBox" VerticalAlignment="Top" Width="191" SelectionChanged="fontBox_SelectionChanged" />
+                     FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,333,4,0" />
+            <ListBox FontSize="30" Height="154" HorizontalAlignment="Left" Margin="12,423,0,0" Name="colorBox" VerticalAlignment="Top" Width="191" SelectionChanged="colorBox_SelectionChanged" />
+            <ListBox FontSize="30" Height="154" HorizontalAlignment="Left" Margin="276,423,0,0" Name="fontBox" VerticalAlignment="Top" Width="191" SelectionChanged="fontBox_SelectionChanged" />
         </Grid>
     </Grid>
  

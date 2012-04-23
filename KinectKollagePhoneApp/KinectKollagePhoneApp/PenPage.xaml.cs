@@ -24,8 +24,8 @@ namespace KinectKollagePhoneApp
         private Point oldPoint;
         SolidColorBrush colorBrush;
         int brushSize;
-        string color = "";
-        string size = "";
+        string color = "Transparent";
+        string size = "10";
         //WriteableBitmap writeableBitmapImg;
 
         public PenPage()
@@ -84,15 +84,15 @@ namespace KinectKollagePhoneApp
             this.listBox2.Items.Add("13");
             this.listBox2.Items.Add("14");
 
-            this.imageCanvas.MouseMove += new MouseEventHandler(img_OnMouseMove);
-            this.imageCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(img_OnMouseLeftButtonDown);
+            //this.imageCanvas.MouseMove += new MouseEventHandler(img_OnMouseMove);
+            //this.imageCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(img_OnMouseLeftButtonDown);
 
             colorBrush = new SolidColorBrush(Colors.Purple);
             brushSize = 5;
 
         }
 
-        void img_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        /*void img_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             currentPoint = e.GetPosition(imageCanvas);
             oldPoint = currentPoint;
@@ -114,7 +114,7 @@ namespace KinectKollagePhoneApp
             this.imageCanvas.Children.Add(line);
             oldPoint = currentPoint;
         }
-
+        */
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             //BinaryReader objReader = new BinaryReader(writeableBitmapImg.ToByteArray);

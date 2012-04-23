@@ -20,6 +20,7 @@ namespace KinectKollagePhoneApp
     public partial class ShapePage : PhoneApplicationPage
     {
         public int stickerNum { get; set; }
+        
         public ShapePage()
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace KinectKollagePhoneApp
                 }
 
             }
-
+            stickerNum = 0;
         }
 
         private void backButton1_Click(object sender, RoutedEventArgs e)

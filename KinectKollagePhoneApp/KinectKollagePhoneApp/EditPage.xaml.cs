@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Microsoft.Xna.Framework.Media;
 using System.IO.IsolatedStorage;
 
 namespace KinectKollagePhoneApp
@@ -63,6 +64,24 @@ namespace KinectKollagePhoneApp
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/TextPage.xaml", UriKind.Relative));
+        }
+
+        private void saveButton1_Click(object sender, RoutedEventArgs e)
+        {
+            var myStore = IsolatedStorageFile.GetUserStoreForApplication();
+            IsolatedStorageFileStream myFileStream = myStore.CreateFile("tempJPEG");
+
+            WriteableBitmap wb = new WriteableBitmap(ContentPanelCanvas, null);
+            wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
+            myFileStream.Close();
+
+            myFileStream = myStore.OpenFile("tempJPEG", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+            MediaLibrary library = new MediaLibrary();
+            Picture pic = library.SavePicture("NewPicture.jpg", myFileStream);
+            MessageBox.Show("Image saved");
+            myFileStream.Close();
+
+            //NavigationService.Navigate(new Uri("/SavePage.xaml", UriKind.Relative));
         }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
