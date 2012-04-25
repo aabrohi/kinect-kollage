@@ -93,36 +93,48 @@ namespace KinectKollagePhoneApp
             {
                 case 1:
                     Image temp1 = new Image();
+                    currentPoint.X -= 30;
+                    currentPoint.Y -= 30;
                     temp1.Source = new BitmapImage(new Uri("newflower.png", UriKind.RelativeOrAbsolute));
                     temp1.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
                     this.ContentPanelCanvas.Children.Add(temp1);
                     break;
                 case 2:
                     Image temp2 = new Image();
+                    currentPoint.X -= 30;
+                    currentPoint.Y -= 29;
                     temp2.Source = new BitmapImage(new Uri("newheart.png", UriKind.RelativeOrAbsolute));
                     temp2.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
                     this.ContentPanelCanvas.Children.Add(temp2);
                     break;
                 case 3:
                     Image temp3 = new Image();
+                    currentPoint.X -= 30;
+                    currentPoint.Y -= 30;
                     temp3.Source = new BitmapImage(new Uri("newsmiley.png", UriKind.RelativeOrAbsolute));
                     temp3.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
                     this.ContentPanelCanvas.Children.Add(temp3);
                     break;
                 case 4:
                     Image temp4 = new Image();
+                    currentPoint.X -= 30;
+                    currentPoint.Y -= 36;
                     temp4.Source = new BitmapImage(new Uri("newsnowman.png", UriKind.RelativeOrAbsolute));
                     temp4.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
                     this.ContentPanelCanvas.Children.Add(temp4);
                     break;
                 case 5:
                     Image temp5 = new Image();
+                    currentPoint.X -= 30;
+                    currentPoint.Y -= 29;
                     temp5.Source = new BitmapImage(new Uri("newstar.png", UriKind.RelativeOrAbsolute));
                     temp5.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
                     this.ContentPanelCanvas.Children.Add(temp5);
                     break;
                 case 6:
                     Image temp6 = new Image();
+                    currentPoint.X -= 31;
+                    currentPoint.Y -= 41;
                     temp6.Source = new BitmapImage(new Uri("newballoon.png", UriKind.RelativeOrAbsolute));
                     temp6.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
                     this.ContentPanelCanvas.Children.Add(temp6);
