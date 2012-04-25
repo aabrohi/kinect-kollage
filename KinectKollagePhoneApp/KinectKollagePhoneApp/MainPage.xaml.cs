@@ -116,6 +116,11 @@ namespace KinectKollagePhoneApp
         {
             NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
         }
+
+        private void logo_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+
+        }
     }
     
 }
