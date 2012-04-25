@@ -156,7 +156,6 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="connect4.png" />
     <Resource Include="connect9.png" />
     <Content Include="Upload.png" />
     <Resource Include="newballoon.png" />
