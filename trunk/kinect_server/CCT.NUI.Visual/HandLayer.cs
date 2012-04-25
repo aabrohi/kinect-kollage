@@ -106,7 +106,6 @@ namespace CCT.NUI.Visual
         protected virtual void DrawCenter(HandData hand, Graphics g)  
         {
            // g.FillEllipse(Brushes.Blue, hand.Location.X - 5, hand.Location.Y - 5, 10, 10);
-
             if (hand.HasPalmPoint)
             {
               //  g.FillEllipse(Brushes.SpringGreen, hand.PalmPoint.Value.X - 5, hand.PalmPoint.Value.Y - 5, 10, 10);
@@ -120,7 +119,14 @@ namespace CCT.NUI.Visual
             if (hand.Contour.Points.Count > 1)
             {
                 var points = hand.Contour.Points.Select(p => new System.Drawing.Point((int)p.X, (int)p.Y)).ToArray();
-                g.DrawLines(yellowPen, points);
+                int alpha = (int)hand.PalmDistance * 64 - 2040;
+                if (alpha > 255)
+                    alpha = 255;
+                if (alpha < 0)
+                    alpha = 0;
+                Pen hand_pen = new Pen(Color.FromArgb(alpha,127,255,0),10);
+                //g.DrawString(hand.PalmDistance.ToString(), this.font, Brushes.White, hand.PalmX + 3, hand.PalmY + 3);
+                g.DrawLines(hand_pen, points);
             }
         }
 
