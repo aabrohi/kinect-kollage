@@ -188,17 +188,17 @@ namespace CCT.NUI.Samples.ImageManipulation
         void ImageForm_Paint(object sender, PaintEventArgs e)
         {
             // Check to see if a new image has been uploaded every 50 times you paint the ImageForm
-            //if (reset_counter == 50)
-            //{
-            //    if (Directory.EnumerateFiles(@"Y:\\", "*.jpg").Count() > this.images.Count()) // test if a new image is found
-            //    {
-            //        this.AddImage(); // if it is reload the images, Adds new Photos!!!
-            //    }
+            if (reset_counter == 50)
+            {
+                if (Directory.EnumerateFiles(@"Y:\\", "*.jpg").Count() > this.images.Count()) // test if a new image is found
+                {
+                    this.AddImage(); // if it is reload the images, Adds new Photos!!!
+                }
 
-            //    reset_counter = 0;
-            //}
+                reset_counter = 0;
+            }
 
-            //reset_counter++;
+            reset_counter++;
 
             foreach (var image in this.images.ToList())
             {
@@ -338,6 +338,9 @@ namespace CCT.NUI.Samples.ImageManipulation
             Debug.WriteLine("image/jpeg " + "image_ " + number + " " + thefilename_res + " " + "f1df26cd49afe58d92fff17cdd1c94bf " + "494611009-ybbVnZ9ThmVUhN65QvH0x2l48BcXUtF0pNG8AUq4 " + "YZ2eGUbGnYz1ratWweQD1fpK1JuxAUtJ4nIZBA1Y " + "cflG9inzlNltp2Znw5zEWA " + "CDS4bQi9NRdRRBGR4Am1skJNRonHbGrsBFwUmpk ");
             string upload_script = tw.UploadPhoto(imageBytes, "image/jpeg", "image_" + number, thefilename_res, "f1df26cd49afe58d92fff17cdd1c94bf", "494611009-ybbVnZ9ThmVUhN65QvH0x2l48BcXUtF0pNG8AUq4", "YZ2eGUbGnYz1ratWweQD1fpK1JuxAUtJ4nIZBA1Y", "cflG9inzlNltp2Znw5zEWA", "CDS4bQi9NRdRRBGR4Am1skJNRonHbGrsBFwUmpk").ToString();
             Debug.WriteLine("Result of upload_script =" + upload_script);
+
+
+
         }
 
         public class TwitPic
@@ -451,6 +454,11 @@ namespace CCT.NUI.Samples.ImageManipulation
         void ImageForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.handDataSource.Stop();
+        }
+
+        private void ImageForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

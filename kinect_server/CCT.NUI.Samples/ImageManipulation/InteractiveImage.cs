@@ -39,10 +39,16 @@ namespace CCT.NUI.Samples.ImageManipulation
 
         public void Translate(float dx, float dy)
         {
-            if (dx > 200 || dy > 200)
+            if (dx > 100 || dy > 100)
             {
                 return;
             }
+
+            if (this.position.X + dx < 0 || this.position.X + dx > 1500)
+                return;
+            if (this.position.Y + dy < 0 || this.position.Y + dy > 1000)
+                return;
+
             this.position.X += dx;
             this.position.Y += dy;
         }
@@ -55,7 +61,11 @@ namespace CCT.NUI.Samples.ImageManipulation
             {
                 return;
             }
-
+            if (this.size.Width > this.originalSize.Width * 2 && transformation.Scale > 1.0)
+                return;
+            if (this.size.Width < this.originalSize.Width / 2 && transformation.Scale < 1.0)
+                return;
+     
             this.position.X -= (newSize.Width - this.size.Width) / 2;
             this.position.Y -= (newSize.Height - this.size.Height) / 2;
             this.SetSize(newSize);

@@ -46,3 +46,27 @@ C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_se
 C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\CCT.NUI.MouseControl.exe
 C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\CCT.NUI.MouseControl.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\mouse_config.xml
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.MouseControl.exe
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.MouseControl.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.Core.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.HandTracking.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.Visual.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.KinectSDK.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\Microsoft.Research.Kinect.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.Core.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.HandTracking.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.Visual.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\bin\Debug\CCT.NUI.KinectSDK.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\MainWindow.baml
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\MainWindow.g.cs
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\App.g.cs
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\CCT.NUI.MouseControl_Content.g.cs
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\CCT.NUI.MouseControl_MarkupCompile.cache
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\CCT.NUI.MouseControl.g.resources
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\CCT.NUI.MouseControl.Properties.Resources.resources
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\CCT.NUI.MouseControl.exe
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.MouseControl\obj\x86\Debug\CCT.NUI.MouseControl.pdb

@@ -16,6 +16,8 @@ namespace CCT.NUI.Samples.ImageManipulation
         private Point startDragPoint;
         private Point startDragPoint2;
 
+        private int pts_gathered = 0;
+
         private InteractiveImage hoveredImage;
 
         private HandData handData;
@@ -40,6 +42,8 @@ namespace CCT.NUI.Samples.ImageManipulation
         {
             this.hoveredImage = image;
             hoveredImage.Hovered = true;
+            
+            pts_gathered++;
 
             if (isResizing)
             {
@@ -52,7 +56,16 @@ namespace CCT.NUI.Samples.ImageManipulation
             }
             if (handClosed)
             {
-                startDragPoint = new Point(handData.PalmPoint.Value.X, handData.PalmPoint.Value.Y, 0);
+                //if (pts_gathered % 2 == 0)
+                    startDragPoint = new Point(handData.PalmPoint.Value.X, handData.PalmPoint.Value.Y, 0);
+                /*else
+                {
+                    startDragPoint.X += handData.PalmPoint.Value.X;
+                    startDragPoint.Y += handData.PalmPoint.Value.Y;
+
+                    startDragPoint.X = startDragPoint.X / pts_gathered % 2;
+                    startDragPoint.Y = startDragPoint.Y / pts_gathered % 2;
+                }*/
             }
             isDragging = handClosed;
         }

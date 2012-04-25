@@ -25,3 +25,31 @@ C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_se
 C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\GenerateResource.write.1.tlog
 C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\CCT.NUI.Samples.exe
 C:\Users\dDSniper\Documents\Visual Studio 2010\Projects\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\CCT.NUI.Samples.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.Samples.exe.config
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\CCT.NUI.Samples.exe
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\CCT.NUI.Samples.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\config.xml
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\Images\P2.JPG
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\Images\P3.JPG
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\Images\P4.JPG
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\Images\P5.JPG
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.Samples.exe
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.Samples.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.Core.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.HandTracking.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.KinectSDK.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.Visual.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\Microsoft.Research.Kinect.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\OpenNI.net.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\XnVNITE.net.dll
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.Core.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.HandTracking.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.KinectSDK.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\bin\Release\CCT.NUI.Visual.pdb
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\CCT.NUI.Samples.ImageManipulation.ImageForm.resources
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\CCT.NUI.Samples.MainForm.resources
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\CCT.NUI.Samples.Properties.Resources.resources
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\CCT.NUI.Samples.SettingsForm.resources
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\ddsniper\Documents\kinect-kollage\kinect_server\CCT.NUI.Samples\obj\x86\Release\GenerateResource.write.1.tlog
