@@ -18,6 +18,10 @@ namespace KinectKollagePhoneApp
 {
     public partial class EditPage : PhoneApplicationPage
     {
+        int PenInst;
+        int StickInst;
+        int TextInst;
+
         public EditPage()
         {
             InitializeComponent();
@@ -46,24 +50,46 @@ namespace KinectKollagePhoneApp
 
         }
 
-        private void backButton1_Click(object sender, RoutedEventArgs e)
+        /*private void backButton1_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
-
+        */
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ShapePage.xaml", UriKind.Relative));
+            //MessageBox.Show(StickInst.ToString());
+            string url = "/ShapePage.xaml?PI=";
+            url += PenInst.ToString();
+            url += "&SI=";
+            url += StickInst.ToString();
+            url += "&TI=";
+            url += TextInst.ToString();
+            NavigationService.Navigate(new Uri(url, UriKind.Relative));
+            //NavigationService.Navigate(new Uri("/ShapePage.xaml", UriKind.Relative));
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/PenPage.xaml", UriKind.Relative));
+            string url = "/PenPage.xaml?PI=";
+            url += PenInst.ToString();
+            url += "&SI=";
+            url += StickInst.ToString();
+            url += "&TI=";
+            url += TextInst.ToString();
+            NavigationService.Navigate(new Uri(url, UriKind.Relative));
+            //NavigationService.Navigate(new Uri("/PenPage.xaml", UriKind.Relative));
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/TextPage.xaml", UriKind.Relative));
+            string url = "/TextPage.xaml?PI=";
+            url += PenInst.ToString();
+            url += "&SI=";
+            url += StickInst.ToString();
+            url += "&TI=";
+            url += TextInst.ToString();
+            NavigationService.Navigate(new Uri(url, UriKind.Relative));
+            //NavigationService.Navigate(new Uri("/TextPage.xaml", UriKind.Relative));
         }
 
         private void saveButton1_Click(object sender, RoutedEventArgs e)
@@ -86,9 +112,29 @@ namespace KinectKollagePhoneApp
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            string url = "/MainPage.xaml?PI=";
+            url += PenInst.ToString();
+            url += "&SI=";
+            url += StickInst.ToString();
+            url += "&TI=";
+            url += TextInst.ToString();
+            NavigationService.Navigate(new Uri(url, UriKind.Relative));
+            //NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
             e.Cancel = true;
         }
 
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            string temp = NavigationContext.QueryString["PI"];
+            PenInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["SI"];
+            StickInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["TI"];
+            TextInst = Convert.ToInt32(temp);
+            //MessageBox.Show(e.Content.ToString());
+            //this.ContentPanelCanvas = (e.Content as ShapePage).ContentPanelCanvas;
+            //MessageBox.Show(temp);
+        }
     }
 }

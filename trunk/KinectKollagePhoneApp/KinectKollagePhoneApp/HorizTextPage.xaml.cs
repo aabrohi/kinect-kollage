@@ -19,6 +19,10 @@ namespace KinectKollagePhoneApp
 {
     public partial class HorizTextPage : PhoneApplicationPage
     {
+        public int PenInst;
+        public int StickInst;
+        public int TextInst;
+
         private Point currentPoint;
         SolidColorBrush colorText;
         FontFamily font;
@@ -170,7 +174,14 @@ namespace KinectKollagePhoneApp
                 wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
                 myFileStream.Close();
 
-                NavigationService.Navigate(new Uri("/TextPage.xaml", UriKind.Relative));
+                string url = "/TextPage.xaml?PI=";
+                url += PenInst.ToString();
+                url += "&SI=";
+                url += StickInst.ToString();
+                url += "&TI=";
+                url += TextInst.ToString();
+                NavigationService.Navigate(new Uri(url, UriKind.Relative));
+                //NavigationService.Navigate(new Uri("/TextPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -189,6 +200,12 @@ namespace KinectKollagePhoneApp
             fontName = temp;
             temp = NavigationContext.QueryString["size"];
             fsize = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["PI"];
+            PenInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["SI"];
+            StickInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["TI"];
+            TextInst = Convert.ToInt32(temp);
         }
        
     }

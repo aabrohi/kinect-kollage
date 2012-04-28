@@ -20,6 +20,10 @@ namespace KinectKollagePhoneApp
 
     public partial class PenPage : PhoneApplicationPage
     {
+        public int PenInst;
+        public int StickInst;
+        public int TextInst;
+
         private Point currentPoint;
         private Point oldPoint;
         SolidColorBrush colorBrush;
@@ -234,6 +238,12 @@ namespace KinectKollagePhoneApp
                 //MessageBox.Show(color);
                 url += "&size=";
                 url += size.ToString();
+                url += "&PI=";
+                url += PenInst.ToString();
+                url += "&SI=";
+                url += StickInst.ToString();
+                url += "&TI=";
+                url += TextInst.ToString();
                 //MessageBox.Show(size);
                 NavigationService.Navigate(new Uri(url, UriKind.Relative));
             }
@@ -241,8 +251,36 @@ namespace KinectKollagePhoneApp
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
+            string url = "/EditPage.xaml?PI=";
+            url += PenInst.ToString();
+            url += "&SI=";
+            url += StickInst.ToString();
+            url += "&TI=";
+            url += TextInst.ToString();
+            NavigationService.Navigate(new Uri(url, UriKind.Relative));
             e.Cancel = true;
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            //MessageBox.Show("navigated to shapepage");
+            string temp = NavigationContext.QueryString["PI"];
+            PenInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["SI"];
+            StickInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["TI"];
+            TextInst = Convert.ToInt32(temp);
+
+            if (PenInst == 0)
+            {
+                MessageBox.Show("Select a pen color and thickness, then rotate the phone horizontally to draw using that brush type. "
+                        + "Rotate the phone vertically to select a different brush type and/or return to the menu.");
+                PenInst = 1;
+            }
+
+            //MessageBox.Show(StickInst.ToString());
+
         }
     }
 }
