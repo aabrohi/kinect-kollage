@@ -22,6 +22,10 @@ namespace KinectKollagePhoneApp
 {
     public partial class TextPage : PhoneApplicationPage
     {
+        public int PenInst;
+        public int StickInst;
+        public int TextInst;
+
         private Point currentPoint;
         SolidColorBrush colorText;
         FontFamily font;
@@ -225,30 +229,48 @@ namespace KinectKollagePhoneApp
                 //MessageBox.Show(fontName.ToString());
                 url += "&size=";
                 url += tsize.ToString();
+                url += "&PI=";
+                url += PenInst.ToString();
+                url += "&SI=";
+                url += StickInst.ToString();
+                url += "&TI=";
+                url += TextInst.ToString();
                 NavigationService.Navigate(new Uri(url, UriKind.Relative));
             }
         }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
+            string url = "/EditPage.xaml?PI=";
+            url += PenInst.ToString();
+            url += "&SI=";
+            url += StickInst.ToString();
+            url += "&TI=";
+            url += TextInst.ToString();
+            NavigationService.Navigate(new Uri(url, UriKind.Relative));
             e.Cancel = true;
         }
-        /*
-       void ContentPanelCanvas_MouseMove(object sender, MouseEventArgs e)
+       
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
+            //MessageBox.Show("navigated to shapepage");
+            string temp = NavigationContext.QueryString["PI"];
+            PenInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["SI"];
+            StickInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["TI"];
+            TextInst = Convert.ToInt32(temp);
 
-            //currentPoint = e.GetPosition(this.ContentPanelCanvas);
+            if (TextInst == 0)
+            {
+                MessageBox.Show("Enter desired text and size, choose a font and color, then rotate the phone horizontally to place copies of that text on the image. "
+                        + "Rotate the phone vertically to choose different text and style and/or return to the menu.");
+                TextInst = 1;
+            }
 
-            TextBlock t = new TextBlock();
-            t.Text = enteredtxt.Text.ToString();
-            TextBlock tp = t;
-            this.ContentPanelCanvas.Children.Remove(tp);
-            //Canvas.SetTop(t, currentPoint.Y);
-            //Canvas.SetLeft(t, currentPoint.X);
-            this.ContentPanelCanvas.Children.Add(t);
+            //MessageBox.Show(StickInst.ToString());
 
-        }   
-       */
+        }
     }
 }

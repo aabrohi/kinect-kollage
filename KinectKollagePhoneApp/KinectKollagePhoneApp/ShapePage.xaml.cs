@@ -20,6 +20,10 @@ namespace KinectKollagePhoneApp
     public partial class ShapePage : PhoneApplicationPage
     {
         public int stickerNum { get; set; }
+
+        public int PenInst;
+        public int StickInst;
+        public int TextInst;
         
         public ShapePage()
         {
@@ -48,13 +52,14 @@ namespace KinectKollagePhoneApp
                 }
 
             }
+            
             stickerNum = 0;
         }
 
-        private void backButton1_Click(object sender, RoutedEventArgs e)
+        /*private void backButton1_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
-        }
+        }*/
 
         private void saveButton1_Click(object sender, RoutedEventArgs e)
         {
@@ -166,14 +171,50 @@ namespace KinectKollagePhoneApp
 
                 string url = "/HorizShapePage.xaml?sn=";
                 url += stickerNum.ToString();
+                url += "&PI=";
+                url += PenInst.ToString();
+                url += "&SI=";
+                url += StickInst.ToString();
+                url += "&TI=";
+                url += TextInst.ToString();
                 NavigationService.Navigate(new Uri(url, UriKind.Relative));
             }
         }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
+            //StickInst = 1;
+            //MessageBox.Show(StickInst.ToString());
+            string url = "/EditPage.xaml?PI=";
+            url += PenInst.ToString();
+            url += "&SI=";
+            url += StickInst.ToString();
+            url += "&TI=";
+            url += TextInst.ToString();
+            NavigationService.Navigate(new Uri(url, UriKind.Relative));
             e.Cancel = true;
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            //MessageBox.Show("navigated to shapepage");
+            string temp = NavigationContext.QueryString["PI"];
+            PenInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["SI"];
+            StickInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["TI"];
+            TextInst = Convert.ToInt32(temp);
+
+            if (StickInst == 0)
+            {
+                MessageBox.Show("Select a sticker, then rotate the phone horizontally to place as many of the selected sticker on the image as desired. "
+                        + "Rotate the phone vertically to select a different sticker and/or return to the menu.");
+                StickInst = 1;
+            }
+            
+            //MessageBox.Show(StickInst.ToString());
+
         }
     }
 }

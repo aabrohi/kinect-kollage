@@ -19,6 +19,10 @@ namespace KinectKollagePhoneApp
 {
     public partial class HorizPenPage : PhoneApplicationPage
     {
+        public int PenInst;
+        public int StickInst;
+        public int TextInst;
+
         private Point currentPoint;
         private Point oldPoint;
         SolidColorBrush colorBrush;
@@ -211,7 +215,14 @@ namespace KinectKollagePhoneApp
                 wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
                 myFileStream.Close();
 
-                NavigationService.Navigate(new Uri("/PenPage.xaml", UriKind.Relative));
+                string url = "/PenPage.xaml?PI=";
+                url += PenInst.ToString();
+                url += "&SI=";
+                url += StickInst.ToString();
+                url += "&TI=";
+                url += TextInst.ToString();
+                NavigationService.Navigate(new Uri(url, UriKind.Relative));
+                //NavigationService.Navigate(new Uri("/PenPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -225,6 +236,12 @@ namespace KinectKollagePhoneApp
             color = temp;
             temp = NavigationContext.QueryString["size"];
             size = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["PI"];
+            PenInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["SI"];
+            StickInst = Convert.ToInt32(temp);
+            temp = NavigationContext.QueryString["TI"];
+            TextInst = Convert.ToInt32(temp);
             //stickerNum = Convert.ToInt32(temp);
             //MessageBox.Show(e.Content.ToString());
             //this.ContentPanelCanvas = (e.Content as ShapePage).ContentPanelCanvas;

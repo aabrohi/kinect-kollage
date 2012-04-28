@@ -31,7 +31,9 @@ namespace KinectKollagePhoneApp
 
         // Constants
         const int IMAGE_PORT = 7070;  // The Echo protocol uses port 14, since this is unassigned
-
+        int TextInst;
+        int PenInst;
+        int StickInst;
 
         // Constructor
         public MainPage()
@@ -42,7 +44,7 @@ namespace KinectKollagePhoneApp
             {
                 myStore.DeleteFile("tempJPEG2");
             }
-            MessageBox.Show("To edit, select a tool and rotate the phone horizontally.\nTo upload, sign in, select a photo from the phone, and upload.");
+            //MessageBox.Show("To edit, select a tool and rotate the phone horizontally.\nTo upload, sign in, select a photo from the phone, and upload.");
 
         }
         void button1_Click(object sender, RoutedEventArgs e)
@@ -114,13 +116,41 @@ namespace KinectKollagePhoneApp
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
+            string url = "/EditPage.xaml?PI=";
+            url += PenInst.ToString();
+            url += "&SI=";
+            url += StickInst.ToString();
+            url += "&TI=";
+            url += TextInst.ToString();
+            NavigationService.Navigate(new Uri(url, UriKind.Relative));
         }
 
         private void logo_ImageFailed(object sender, ExceptionRoutedEventArgs e)
         {
 
         }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            if (this.NavigationContext.QueryString.ContainsKey("PI"))
+            {
+                //MessageBox.Show("Navigated to Main from Edit");
+                string temp = NavigationContext.QueryString["PI"];
+                PenInst = Convert.ToInt32(temp);
+                temp = NavigationContext.QueryString["SI"];
+                StickInst = Convert.ToInt32(temp);
+                temp = NavigationContext.QueryString["TI"];
+                TextInst = Convert.ToInt32(temp);
+            }
+            else
+            {
+                //MessageBox.Show("Start at Main");
+                PenInst = 0;
+                StickInst = 0;
+                TextInst = 0;
+            }
+        }
+
     }
     
 }
