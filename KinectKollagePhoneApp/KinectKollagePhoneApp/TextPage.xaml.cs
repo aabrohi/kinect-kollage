@@ -15,18 +15,22 @@ using System.Windows.Resources;
 using System.IO;
 using Microsoft.Xna.Framework.Media;
 using System.IO.IsolatedStorage;
-
-
+using Microsoft.Xna.Framework; //////////////
+using Microsoft.Devices.Sensors; ////////////
 
 namespace KinectKollagePhoneApp
 {
     public partial class TextPage : PhoneApplicationPage
     {
+        Accelerometer accelerometer;
+        double thresh = .5;
+        bool undone = false;
+
         public int PenInst;
         public int StickInst;
         public int TextInst;
 
-        private Point currentPoint;
+        private System.Windows.Point currentPoint;
         SolidColorBrush colorText;
         FontFamily font;
         int fontsize = 16;
@@ -37,6 +41,13 @@ namespace KinectKollagePhoneApp
         public TextPage()
         {
             InitializeComponent();
+            if (accelerometer == null)
+            {
+                accelerometer = new Accelerometer();
+                accelerometer.TimeBetweenUpdates = TimeSpan.FromMilliseconds(20);
+                accelerometer.CurrentValueChanged += new EventHandler<SensorReadingEventArgs<AccelerometerReading>>(accelerometer_CurrentValueChanged);
+                accelerometer.Start();
+            }
             BitmapImage bi = new BitmapImage();
             // this.ContentPanelCanvas.MouseMove += new MouseEventHandler(ContentPanelCanvas_MouseMove);
            //this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(ContentPanelCanvas_MouseLeftButtonDown);
@@ -78,11 +89,31 @@ namespace KinectKollagePhoneApp
             this.fontBox.Items.Add("Verdana");
 
         }
-
-
-        private void backButton1_Click(object sender, RoutedEventArgs e)
+        void accelerometer_CurrentValueChanged(object sender, SensorReadingEventArgs<AccelerometerReading> e)
         {
-            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
+            Dispatcher.BeginInvoke(() => undo(e.SensorReading));
+        }
+
+        private void undo(AccelerometerReading acceleromterReading)
+        {
+            //MessageBox.Show("I shook the phone?");
+            Vector3 acceleration = acceleromterReading.Acceleration;
+            if ((acceleration.X > thresh || acceleration.Y > thresh || acceleration.Z > thresh) && !undone)
+            {
+                BitmapImage bi = new BitmapImage();
+                using (var store = IsolatedStorageFile.GetUserStoreForApplication())
+                {
+                    using (IsolatedStorageFileStream fileStream = store.OpenFile("undoJPEG", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+                    {
+                        bi.SetSource(fileStream);
+                        image2.Source = bi;
+                        store.CopyFile("undoJPEG", "tempJPEG2", true);
+                        fileStream.Close();
+                    }
+                }
+                undone = true;
+                //MessageBox.Show("I shook the phone?");
+            }
         }
 
         private void saveButton1_Click(object sender, RoutedEventArgs e)
@@ -217,6 +248,19 @@ namespace KinectKollagePhoneApp
                 wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
                 myFileStream.Close();
 
+                /////////////////////////////// UNDO
+                if (myStore.FileExists("undoJPEG"))
+                {
+                    myStore.DeleteFile("undoJPEG");
+                }
+
+                IsolatedStorageFileStream myUndoStream = myStore.CreateFile("undoJPEG");
+
+                WriteableBitmap uwb = new WriteableBitmap(ContentPanelCanvas, null);
+                uwb.SaveJpeg(myUndoStream, 1000, 667, 0, 100);
+                myUndoStream.Close();
+                //////////////////////////////// \UNDO
+
                 string url = "/HorizTextPage.xaml?text=";
                 //string url = "/HorizTextPage.xaml";
                 url += text.ToString();
@@ -265,7 +309,7 @@ namespace KinectKollagePhoneApp
             if (TextInst == 0)
             {
                 MessageBox.Show("Enter desired text and size, choose a font and color, then rotate the phone horizontally to place copies of that text on the image. "
-                        + "Rotate the phone vertically to choose different text and style and/or return to the menu.");
+                        + "Rotate the phone vertically to choose different text and style and/or return to the menu. Shake the phone when vertical to undo the previous edits.");
                 TextInst = 1;
             }
 

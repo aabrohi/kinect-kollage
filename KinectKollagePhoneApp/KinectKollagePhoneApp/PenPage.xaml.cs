@@ -14,18 +14,24 @@ using Microsoft.Phone.Controls;
 using System.IO;
 using System.IO.IsolatedStorage;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework; //////////////
+using Microsoft.Devices.Sensors; ////////////
 
 namespace KinectKollagePhoneApp
 {
 
     public partial class PenPage : PhoneApplicationPage
     {
+        Accelerometer accelerometer;
+        double thresh = .5;
+        bool undone = false;
+
         public int PenInst;
         public int StickInst;
         public int TextInst;
 
-        private Point currentPoint;
-        private Point oldPoint;
+        private System.Windows.Point currentPoint;
+        private System.Windows.Point oldPoint;
         SolidColorBrush colorBrush;
         int brushSize;
         string color = "Transparent";
@@ -35,6 +41,13 @@ namespace KinectKollagePhoneApp
         public PenPage()
         {
             InitializeComponent();
+            if (accelerometer == null)
+            {
+                accelerometer = new Accelerometer();
+                accelerometer.TimeBetweenUpdates = TimeSpan.FromMilliseconds(20);
+                accelerometer.CurrentValueChanged += new EventHandler<SensorReadingEventArgs<AccelerometerReading>>(accelerometer_CurrentValueChanged);
+                accelerometer.Start();
+            }
             BitmapImage bi = new BitmapImage();
             using (var store = IsolatedStorageFile.GetUserStoreForApplication())
             {
@@ -95,7 +108,32 @@ namespace KinectKollagePhoneApp
             brushSize = 5;
 
         }
+        void accelerometer_CurrentValueChanged(object sender, SensorReadingEventArgs<AccelerometerReading> e)
+        {
+            Dispatcher.BeginInvoke(() => undo(e.SensorReading));
+        }
 
+        private void undo(AccelerometerReading acceleromterReading)
+        {
+            //MessageBox.Show("I shook the phone?");
+            Vector3 acceleration = acceleromterReading.Acceleration;
+            if ((acceleration.X > thresh || acceleration.Y > thresh || acceleration.Z > thresh) && !undone)
+            {
+                BitmapImage bi = new BitmapImage();
+                using (var store = IsolatedStorageFile.GetUserStoreForApplication())
+                {
+                    using (IsolatedStorageFileStream fileStream = store.OpenFile("undoJPEG", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+                    {
+                        bi.SetSource(fileStream);
+                        img.Source = bi;
+                        store.CopyFile("undoJPEG", "tempJPEG2", true);
+                        fileStream.Close();
+                    }
+                }
+                undone = true;
+                //MessageBox.Show("I shook the phone?");
+            }
+        }
         /*void img_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             currentPoint = e.GetPosition(imageCanvas);
@@ -233,6 +271,19 @@ namespace KinectKollagePhoneApp
                 wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
                 myFileStream.Close();
 
+                /////////////////////////////// UNDO
+                if (myStore.FileExists("undoJPEG"))
+                {
+                    myStore.DeleteFile("undoJPEG");
+                }
+
+                IsolatedStorageFileStream myUndoStream = myStore.CreateFile("undoJPEG");
+
+                WriteableBitmap uwb = new WriteableBitmap(imageCanvas, null);
+                uwb.SaveJpeg(myUndoStream, 1000, 667, 0, 100);
+                myUndoStream.Close();
+                //////////////////////////////// \UNDO
+
                 string url = "/HorizPenPage.xaml?color=";
                 url += color.ToString();
                 //MessageBox.Show(color);
@@ -275,7 +326,7 @@ namespace KinectKollagePhoneApp
             if (PenInst == 0)
             {
                 MessageBox.Show("Select a pen color and thickness, then rotate the phone horizontally to draw using that brush type. "
-                        + "Rotate the phone vertically to select a different brush type and/or return to the menu.");
+                        + "Rotate the phone vertically to select a different brush type and/or return to the menu. Shake the phone when vertical to undo the previous edits.");
                 PenInst = 1;
             }
 
