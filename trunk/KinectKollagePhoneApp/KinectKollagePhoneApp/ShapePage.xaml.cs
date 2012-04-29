@@ -14,11 +14,17 @@ using System.Windows.Resources;
 using Microsoft.Phone.Controls;
 using Microsoft.Xna.Framework.Media;
 using System.IO.IsolatedStorage;
+using Microsoft.Xna.Framework; //////////////
+using Microsoft.Devices.Sensors; ////////////
 
 namespace KinectKollagePhoneApp
 {
     public partial class ShapePage : PhoneApplicationPage
     {
+        Accelerometer accelerometer;
+        double thresh = .5;
+        bool undone = false;
+
         public int stickerNum { get; set; }
 
         public int PenInst;
@@ -28,9 +34,14 @@ namespace KinectKollagePhoneApp
         public ShapePage()
         {
             InitializeComponent();
+            if (accelerometer == null)
+            {
+                accelerometer = new Accelerometer();
+                accelerometer.TimeBetweenUpdates = TimeSpan.FromMilliseconds(20);
+                accelerometer.CurrentValueChanged += new EventHandler<SensorReadingEventArgs<AccelerometerReading>>(accelerometer_CurrentValueChanged);
+                accelerometer.Start();
+            }
             BitmapImage bi = new BitmapImage();
-            //this.ContentPanelCanvas.MouseMove += new MouseEventHandler(ContentPanelCanvas_MouseMove);
-            this.ContentPanelCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(ContentPanelCanvas_MouseLeftButtonDown);
             using (var store = IsolatedStorageFile.GetUserStoreForApplication())
             {
                 /*var filestream = store.OpenFile("image.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
@@ -56,11 +67,33 @@ namespace KinectKollagePhoneApp
             stickerNum = 0;
         }
 
-        /*private void backButton1_Click(object sender, RoutedEventArgs e)
+        void accelerometer_CurrentValueChanged(object sender, SensorReadingEventArgs<AccelerometerReading> e)
         {
-            NavigationService.Navigate(new Uri("/EditPage.xaml", UriKind.Relative));
-        }*/
+            Dispatcher.BeginInvoke(() => undo(e.SensorReading));
+        }
 
+        private void undo(AccelerometerReading acceleromterReading)
+        {
+            //MessageBox.Show("I shook the phone?");
+            Vector3 acceleration = acceleromterReading.Acceleration;
+            if ((acceleration.X > thresh || acceleration.Y > thresh || acceleration.Z > thresh) && !undone)
+            {
+                BitmapImage bi = new BitmapImage();
+                using (var store = IsolatedStorageFile.GetUserStoreForApplication())
+                {
+                    using (IsolatedStorageFileStream fileStream = store.OpenFile("undoJPEG", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+                    {
+                        bi.SetSource(fileStream);
+                        image2.Source = bi;
+                        store.CopyFile("undoJPEG", "tempJPEG2", true);
+                        fileStream.Close();
+                    }
+                }
+                undone = true;
+                //MessageBox.Show("I shook the phone?");
+            }
+        }
+        
         private void saveButton1_Click(object sender, RoutedEventArgs e)
         {
             var myStore = IsolatedStorageFile.GetUserStoreForApplication();
@@ -102,52 +135,6 @@ namespace KinectKollagePhoneApp
             stickerNum = 6;
         }
 
-        void ContentPanelCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            /*currentPoint = e.GetPosition(ContentPanelCanvas);
-            oldPoint = currentPoint;
-            switch (stickerNum)
-            {
-                case 1:
-                    Image temp1 = new Image();
-                    temp1.Source = new BitmapImage(new Uri("newflower.png", UriKind.RelativeOrAbsolute));
-                    temp1.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
-                    this.ContentPanelCanvas.Children.Add(temp1);
-                    break;
-                case 2:
-                    Image temp2 = new Image();
-                    temp2.Source = new BitmapImage(new Uri("newheart.png", UriKind.RelativeOrAbsolute));
-                    temp2.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
-                    this.ContentPanelCanvas.Children.Add(temp2);
-                    break;
-                case 3:
-                    Image temp3 = new Image();
-                    temp3.Source = new BitmapImage(new Uri("newsmiley.png", UriKind.RelativeOrAbsolute));
-                    temp3.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
-                    this.ContentPanelCanvas.Children.Add(temp3);
-                    break;
-                case 4:
-                    Image temp4 = new Image();
-                    temp4.Source = new BitmapImage(new Uri("newsnowman.png", UriKind.RelativeOrAbsolute));
-                    temp4.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
-                    this.ContentPanelCanvas.Children.Add(temp4);
-                    break;
-                case 5:
-                    Image temp5 = new Image();
-                    temp5.Source = new BitmapImage(new Uri("newstar.png", UriKind.RelativeOrAbsolute));
-                    temp5.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
-                    this.ContentPanelCanvas.Children.Add(temp5);
-                    break;
-                case 6:
-                    Image temp6 = new Image();
-                    temp6.Source = new BitmapImage(new Uri("newballoon.png", UriKind.RelativeOrAbsolute));
-                    temp6.Margin = new Thickness(currentPoint.X, currentPoint.Y, 0, 0);
-                    this.ContentPanelCanvas.Children.Add(temp6);
-                    break;
-             
-            }
-            */
-        }
         private void PhoneApplicationPage_OrientationChanged(object sender, OrientationChangedEventArgs e)
         {
             //MessageBox.Show(this.Orientation.ToString());
@@ -157,6 +144,7 @@ namespace KinectKollagePhoneApp
             }
             else
             {
+                accelerometer.Stop();
                 var myStore = IsolatedStorageFile.GetUserStoreForApplication();
                 if(myStore.FileExists("tempJPEG2"))
                 {
@@ -169,6 +157,19 @@ namespace KinectKollagePhoneApp
                 wb.SaveJpeg(myFileStream, 1000, 667, 0, 100);
                 myFileStream.Close();
 
+                /////////////////////////////// UNDO
+                if (myStore.FileExists("undoJPEG"))
+                {
+                    myStore.DeleteFile("undoJPEG");
+                }
+
+                IsolatedStorageFileStream myUndoStream = myStore.CreateFile("undoJPEG");
+
+                WriteableBitmap uwb = new WriteableBitmap(ContentPanelCanvas, null);
+                uwb.SaveJpeg(myUndoStream, 1000, 667, 0, 100);
+                myUndoStream.Close();
+                //////////////////////////////// \UNDO
+
                 string url = "/HorizShapePage.xaml?sn=";
                 url += stickerNum.ToString();
                 url += "&PI=";
@@ -180,7 +181,7 @@ namespace KinectKollagePhoneApp
                 NavigationService.Navigate(new Uri(url, UriKind.Relative));
             }
         }
-
+        
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             //StickInst = 1;
@@ -209,7 +210,7 @@ namespace KinectKollagePhoneApp
             if (StickInst == 0)
             {
                 MessageBox.Show("Select a sticker, then rotate the phone horizontally to place as many of the selected sticker on the image as desired. "
-                        + "Rotate the phone vertically to select a different sticker and/or return to the menu.");
+                        + "Rotate the phone vertically to select a different sticker and/or return to the menu. Shake the phone when vertical to undo the previous edits.");
                 StickInst = 1;
             }
             
